@@ -504,7 +504,64 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
 .ax-opt{margin:8px 0;border:1px dashed rgba(255,255,255,.18);border-radius:12px;padding:8px 12px}.ax-opt summary{cursor:pointer;color:#9aa0b5;font-size:12px}
 .ax-vup{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:6px 0}.ax-vprev{flex-basis:100%}
 
+
+.sidebar{padding:12px 10px!important}
+.sidebar-item{padding:7px 12px!important;gap:10px!important}
+.sidebar-menu-list{gap:1px!important;overflow-y:auto;scrollbar-width:thin}
+.sb-search{width:100%;box-sizing:border-box;margin:0 0 8px;padding:8px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:#0b0a12;color:#fff;font-size:12px;outline:none}
+.sb-grp{font-size:9px;font-weight:700;letter-spacing:1.2px;color:#6d6788;text-transform:uppercase;margin:10px 6px 3px;cursor:pointer;display:flex;justify-content:space-between}
+.sb-grp.shut+.sb-box{display:none}
+.sb-box{display:flex;flex-direction:column;gap:1px}
+#quick-nav{position:sticky;top:78px;z-index:50;display:flex;gap:6px;overflow-x:auto;padding:6px 2px;margin:-6px 0 -8px;background:rgba(11,10,18,.92);backdrop-filter:blur(8px);scrollbar-width:none}
+#quick-nav::-webkit-scrollbar{display:none}
+#quick-nav button{flex:0 0 auto;border:1px solid rgba(255,255,255,.1);background:#15131f;color:#c9c5de;font-size:12px;padding:6px 12px;border-radius:99px;cursor:pointer}
+#quick-nav button.on{background:linear-gradient(90deg,#00e5ff,#b516ff);color:#fff;border-color:transparent}
+.ax-sw{position:relative;display:inline-block;width:40px;height:22px;vertical-align:middle}
+.ax-sw input{opacity:0;width:0;height:0}
+.ax-sw i{position:absolute;inset:0;background:#3a3550;border-radius:99px;transition:.2s;cursor:pointer}
+.ax-sw i::after{content:"";position:absolute;width:16px;height:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.ax-sw input:checked+i{background:#20c77d}
+.ax-sw input:checked+i::after{transform:translateX(18px)}
+#view-AutoPayment{display:none!important}
+.container{padding-top:84px!important}
+@media(min-width:1100px){
+ .sidebar{left:0!important;top:70px;height:calc(100% - 70px)!important;box-shadow:none!important;border-right:1px solid rgba(255,255,255,.06);width:236px!important;z-index:900!important}
+ .sidebar-header-box,.sidebar-menu-cat,.sidebar-close,.sidebar-overlay,#menu-toggle{display:none!important}
+ .container{margin-left:248px!important;max-width:none!important;padding-right:24px!important}
+ #quick-nav{top:70px}
+}
+html[data-theme="ocean"]{--bg-color:#06121f;--sidebar-bg:#081a2c;--input-bg:#0e2237;--card-bg:#081a2ccc;--card-border:#22d3ee33;--neon-cyan:#22d3ee;--neon-purple:#3b82f6;--neon-pink:#0ea5e9;--rb:linear-gradient(90deg,#22d3ee,#3b82f6,#06b6d4,#60a5fa,#22d3ee);--rb-conic:conic-gradient(from var(--rb-a),#22d3ee,#3b82f6,#06b6d4,#60a5fa,#22d3ee)}
+html[data-theme="emerald"]{--bg-color:#06140e;--sidebar-bg:#08201a;--input-bg:#0d2a21;--card-bg:#08201acc;--card-border:#34d39933;--neon-cyan:#34d399;--neon-purple:#10b981;--neon-pink:#84cc16;--rb:linear-gradient(90deg,#34d399,#10b981,#a3e635,#14b8a6,#34d399);--rb-conic:conic-gradient(from var(--rb-a),#34d399,#10b981,#a3e635,#14b8a6,#34d399)}
+html[data-theme="sunset"]{--bg-color:#160a08;--sidebar-bg:#1f0f0b;--input-bg:#2a1511;--card-bg:#1f0f0bcc;--card-border:#fb923c33;--neon-cyan:#fb923c;--neon-purple:#f43f5e;--neon-pink:#fbbf24;--rb:linear-gradient(90deg,#f43f5e,#fb923c,#fbbf24,#ec4899,#f43f5e);--rb-conic:conic-gradient(from var(--rb-a),#f43f5e,#fb923c,#fbbf24,#ec4899,#f43f5e)}
+html[data-theme="royal"]{--bg-color:#0d0820;--sidebar-bg:#130b2e;--input-bg:#1b1240;--card-bg:#130b2ecc;--card-border:#c084fc33;--neon-cyan:#c084fc;--neon-purple:#8b5cf6;--neon-pink:#e879f9;--rb:linear-gradient(90deg,#8b5cf6,#c084fc,#e879f9,#6366f1,#8b5cf6);--rb-conic:conic-gradient(from var(--rb-a),#8b5cf6,#c084fc,#e879f9,#6366f1,#8b5cf6)}
+html[data-theme="crimson"]{--bg-color:#130607;--sidebar-bg:#1c0a0c;--input-bg:#26100f;--card-bg:#1c0a0ccc;--card-border:#ff5c5c33;--neon-cyan:#ff5c5c;--neon-purple:#e11d48;--neon-pink:#ff7a59;--rb:linear-gradient(90deg,#ff2a2a,#e11d48,#ff7a59,#fb7185,#ff2a2a);--rb-conic:conic-gradient(from var(--rb-a),#ff2a2a,#e11d48,#ff7a59,#fb7185,#ff2a2a)}
+html[data-theme="gold"]{--bg-color:#0f0d06;--sidebar-bg:#17140a;--input-bg:#211c0d;--card-bg:#17140acc;--card-border:#fcd34d33;--neon-cyan:#fcd34d;--neon-purple:#f59e0b;--neon-pink:#fde68a;--rb:linear-gradient(90deg,#fcd34d,#f59e0b,#fde68a,#d97706,#fcd34d);--rb-conic:conic-gradient(from var(--rb-a),#fcd34d,#f59e0b,#fde68a,#d97706,#fcd34d)}
+html[data-theme="mono"]{--bg-color:#0c0d10;--sidebar-bg:#121419;--input-bg:#1b1e26;--card-bg:#121419cc;--card-border:#e5e7eb33;--neon-cyan:#e5e7eb;--neon-purple:#9ca3af;--neon-pink:#d1d5db;--rb:linear-gradient(90deg,#f3f4f6,#9ca3af,#e5e7eb,#6b7280,#f3f4f6);--rb-conic:conic-gradient(from var(--rb-a),#f3f4f6,#9ca3af,#e5e7eb,#6b7280,#f3f4f6)}
+html[data-theme] body{background-color:var(--bg-color)!important}
+html[data-theme] .navbar,html[data-theme] .sidebar{background:var(--sidebar-bg)!important}
+html[data-theme] .sidebar-item.active-menu{background:linear-gradient(90deg,color-mix(in srgb,var(--neon-cyan) 28%,transparent),color-mix(in srgb,var(--neon-purple) 24%,transparent))!important}
+#thm-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100000;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+#thm-box{background:#14121d;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;width:100%;max-width:360px;color:#fff;font-family:inherit}
+#thm-box h3{margin:0 0 12px;font-size:15px}#thm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+#thm-grid button{background:none;border:2px solid transparent;border-radius:14px;padding:6px 2px;color:#cbd0dc;font-size:11px;cursor:pointer}#thm-grid button.on{border-color:#fff}
+#thm-grid i{display:block;width:44px;height:44px;border-radius:50%;margin:0 auto 5px;border:2px solid rgba(255,255,255,.25)}
 </style>
+<script>
+/* panel themes (user + admin share the same choice) */
+(function () {
+  var SW = {"rainbow": ["Rainbow", "conic-gradient(#ff2a2a,#ffe600,#2bff5a,#00e5ff,#b516ff,#ff2a2a)"], "ocean": ["Ocean", "linear-gradient(135deg,#06121f 0%,#3b82f6 55%,#22d3ee 100%)"], "emerald": ["Emerald", "linear-gradient(135deg,#06140e 0%,#10b981 55%,#34d399 100%)"], "sunset": ["Sunset", "linear-gradient(135deg,#160a08 0%,#f43f5e 55%,#fb923c 100%)"], "royal": ["Royal", "linear-gradient(135deg,#0d0820 0%,#8b5cf6 55%,#c084fc 100%)"], "crimson": ["Crimson", "linear-gradient(135deg,#130607 0%,#e11d48 55%,#ff5c5c 100%)"], "gold": ["Gold", "linear-gradient(135deg,#0f0d06 0%,#f59e0b 55%,#fcd34d 100%)"], "mono": ["Graphite", "linear-gradient(135deg,#0c0d10 0%,#9ca3af 55%,#e5e7eb 100%)"]}, KEY = 'panel_theme_v2';
+  function apply(k) { var h = document.documentElement; if (!k || k === 'rainbow' || !SW[k]) h.removeAttribute('data-theme'); else h.setAttribute('data-theme', k); try { var m = document.querySelector('meta[name=theme-color]'); if (m) m.content = getComputedStyle(h).getPropertyValue('--bg-color') || '#0b0a12'; } catch (e) {} }
+  try { apply(localStorage.getItem(KEY)); } catch (e) {}
+  window.openThemes = window.cycleTheme = function () {
+    if (document.getElementById('thm-ov')) return;
+    var cur = ''; try { cur = localStorage.getItem(KEY) || 'rainbow'; } catch (e) {}
+    var ov = document.createElement('div'); ov.id = 'thm-ov';
+    ov.innerHTML = '<div id="thm-box"><h3>Choose theme</h3><div id="thm-grid">' + Object.keys(SW).map(function (k) { return '<button data-k="' + k + '" class="' + (k === cur ? 'on' : '') + '"><i style="background:' + SW[k][1] + '"></i>' + SW[k][0] + '</button>'; }).join('') + '</div></div>';
+    ov.onclick = function (e) { if (e.target === ov) ov.remove(); var b = e.target.closest && e.target.closest('button[data-k]'); if (b) { try { localStorage.setItem(KEY, b.dataset.k); } catch (x) {} apply(b.dataset.k); ov.remove(); } };
+    document.body.appendChild(ov);
+  };
+})();
+</script>
 </head>
 <body>
 
@@ -559,6 +616,7 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
             <button class="menu-btn" id="menu-toggle"><i class="fas fa-bars"></i></button>
             <div class="logo"><img src="data:image/webp;base64,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" alt="" style="height:28px;width:28px;border-radius:8px;vertical-align:middle;margin-right:8px;object-fit:cover">ADMIN <span>PANEL</span></div>
         </div>
+        <button class="menu-btn" onclick="openThemes()" aria-label="Theme"><i class="fas fa-palette"></i></button>
     </nav>
 
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
@@ -583,7 +641,7 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
             <div class="sidebar-item" id="menu-Maintenance" onclick="switchTab('Maintenance')"><i class="fas fa-tools"></i> Maintenance Mode</div>
             <div class="sidebar-item" id="menu-Orders" onclick="switchTab('Orders')"><i class="fas fa-receipt"></i> Total Orders</div>
             <div class="sidebar-item" id="menu-Deposits" onclick="switchTab('Deposits')"><i class="fas fa-wallet"></i> Deposit History</div>
-            <div class="sidebar-item" id="menu-AutoPayment" onclick="switchTab('AutoPayment')"><i class="fas fa-bolt"></i> Auto Payment Add</div>
+            
             <div class="sidebar-item" id="menu-Tickets" onclick="switchTab('Tickets')"><i class="fas fa-headset"></i> Support Tickets</div>
             <div class="sidebar-item" id="menu-Links" onclick="switchTab('Links')"><i class="fas fa-link"></i> Site Links / How-To</div>
             
@@ -593,7 +651,6 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
             <div class="sidebar-item" id="menu-Gateways" onclick="switchTab('Gateways')"><i class="fas fa-credit-card"></i> Payment Gateways</div>
             <div class="sidebar-item" id="menu-ApiMgmt" onclick="switchTab('ApiMgmt')"><i class="fas fa-code"></i> API Management</div>
             <div class="sidebar-item" id="menu-TelegramSet" onclick="switchTab('TelegramSet')"><i class="fab fa-telegram"></i> Telegram Bot</div>
-            <div class="sidebar-item" id="menu-TgBots" onclick="switchTab('TgBots')"><i class="fas fa-robot"></i> Telegram Bots (Paid)</div>
             <div class="sidebar-item" id="menu-MediaMgr" onclick="switchTab('MediaMgr')"><i class="fas fa-photo-film"></i> Media, Videos &amp; Branding</div>
             <div class="sidebar-item" id="menu-Announce" onclick="switchTab('Announce')"><i class="fas fa-bullhorn"></i> Announcements</div>
             <div class="sidebar-item" id="menu-SecuritySet" onclick="switchTab('SecuritySet')"><i class="fas fa-shield-halved"></i> Admin &amp; Security</div>
@@ -659,7 +716,6 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
         <div class="tab-view-section hidden" id="view-Gateways"><div id="ax-gw"></div></div>
         <div class="tab-view-section hidden" id="view-ApiMgmt"><div id="ax-api"></div></div>
         <div class="tab-view-section hidden" id="view-TelegramSet"><div id="ax-tg"></div></div>
-        <div class="tab-view-section hidden" id="view-TgBots"><div id="ax-tgb"></div></div>
         <div class="tab-view-section hidden" id="view-MediaMgr"><div id="ax-media"></div></div>
         <div class="tab-view-section hidden" id="view-Announce"><div id="ax-ann"></div></div>
         <div class="tab-view-section hidden" id="view-SecuritySet"><div id="ax-sec"></div></div>
@@ -1865,7 +1921,7 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
     const money = (n) => '₹' + (Number(n) || 0).toLocaleString('en-IN', { maximumFractionDigits: 2 });
     const dt = (ts) => { if (!ts) return '—'; const d = new Date(ts); return isNaN(d) ? '—' : d.toLocaleString(); };
     const $id = (i) => document.getElementById(i);
-    let M = { tgb: {}, tgo: {}, tgbCfg: {}, tgm: {}, meta: {}, mgmt: {}, stock: {}, sup: {}, map: {}, gw: {}, pay: {}, ord: {}, cli: {}, ann: {}, brand: {}, media: {}, tg: {}, tgPub: {}, apiCfg: {}, pw: {}, audit: {}, supLogs: {}, gwLogs: {}, apiLogs: {}, maint: {}, paySet: {}, legacySup: {} };
+    let M = { meta: {}, mgmt: {}, stock: {}, sup: {}, map: {}, gw: {}, pay: {}, ord: {}, cli: {}, ann: {}, brand: {}, media: {}, tg: {}, tgPub: {}, apiCfg: {}, pw: {}, audit: {}, supLogs: {}, gwLogs: {}, apiLogs: {}, maint: {}, paySet: {}, legacySup: {} };
     const audit = (action, detail) => { try { push(ref(db, 'admin_audit'), { email: (auth.currentUser && auth.currentUser.email) || '', action, detail: String(detail || '').slice(0, 200), ts: Date.now() }); } catch (e) {} };
     const ok = (m) => showToast(m || 'Saved'); const bad = (m) => showToast(m || 'Failed', 'error');
 
@@ -1992,9 +2048,9 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
     };
     window.axDelSup = async (id) => { if (Object.values(M.map).some(m => m.supplierId === id)) return bad('Pehle is supplier ki mapping hatao'); if (!confirm('Supplier delete karna hai?')) return; try { await remove(ref(db, `suppliers/${id}`)); audit('delete_supplier', id); ok('Deleted'); } catch (e) { bad(); } };
     const supCall = async (s, action) => {
-        if (!s.balanceUrl) return { status: 'not_configured', note: 'Balance endpoint set nahi hai (Not connected)' };
+        const bu = s.balanceUrl || s.apiUrl;
         const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }; if (s.masterKey) headers['x-master-key'] = s.masterKey;
-        const res = await fetch(s.balanceUrl, { method: 'POST', headers, body: new URLSearchParams({ api_key: s.apiKey, action: 'balance' }) });
+        const res = await admFetch(bu, { method: 'POST', headers, body: new URLSearchParams({ api_key: s.apiKey, action: 'balance' }) });
         const j = await res.json().catch(() => null); if (!j) throw new Error('Response JSON nahi hai (HTTP ' + res.status + ')');
         const v = String(s.balancePath || 'balance').split('.').reduce((a, k) => a == null ? a : a[k], j);
         if (v == null) throw new Error(j.message || j.error || 'Balance field nahi mila'); return { status: 'ok', balance: v };
@@ -2027,28 +2083,72 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
         zapupi: { name: 'ZapUPI', baseUrl: 'https://pay.zapupi.com', createPath: '/api/qr.php', verifyPath: '/api/verify-order.php' },
         fam: { name: 'FAM Gateway', baseUrl: 'https://famgateway.in', createPath: '/api/qr.php', verifyPath: '/api/verify-order.php' }
     };
+    // ---- proxy helper: Admin page se gateway/supplier test (CORS-safe) ----
+    const admFetch = async (url, init) => {
+        url = String(url).replace(/^http:\/\//i, 'https://');
+        try { const r = await fetch('/api/gw?u=' + encodeURIComponent(url), init); if (r.headers.get('x-gw') === 'ok') return r; } catch (e) {}
+        return fetch(url, init);
+    };
+    const GW_NORMALIZE = (rawUrl, cp, vp) => {   // admin ne poora endpoint paste kiya ho to base + path alag kar do
+        let u; try { u = new URL(String(rawUrl).trim().replace(/^http:\/\//i, 'https://')); } catch (e) { return null; }
+        let base = u.origin, path = u.pathname.replace(/\/+$/, '');
+        if (path && /\.php$|\/api\//i.test(path)) { cp = path; if (/qr\.php$/i.test(path) && !vp) vp = path.replace(/qr\.php$/i, 'verify-order.php'); } else if (path) base += path;
+        return { base, cp: cp || '/api/qr.php', vp: vp || '/api/verify-order.php' };
+    };
+    window.axTestGw = async (id) => {
+        const g = M.gw[id]; if (!g) return;
+        try {
+            const u = `${String(g.baseUrl).replace(/\/$/, '')}${g.verifyPath || '/api/verify-order.php'}?api_key=${encodeURIComponent(g.apiKey)}&order_id=TEST${Date.now()}`;
+            const r = await admFetch(u, { cache: 'no-store' }); const t = await r.text(); let j = null; try { j = JSON.parse(t); } catch (e) {}
+            let st, note;
+            if (!j) { st = 'error'; note = 'URL JSON nahi de raha (HTTP ' + r.status + ') - API URL / path galat hai'; }
+            else if (/unauthor|invalid.*key|api.?key|forbidden|denied/i.test(JSON.stringify(j)) && !/not.?found|no.?order/i.test(JSON.stringify(j))) { st = 'error'; note = 'API key galat lag rahi hai: ' + JSON.stringify(j).slice(0, 90); }
+            else { st = 'ok'; note = 'API URL + key kaam kar rahe hain'; }
+            await update(ref(db, `payment_gateways/${id}`), { status: st, statusNote: note, lastCheck: Date.now() });
+            showToast(note, st === 'ok' ? 'success' : 'error');
+        } catch (e) { await update(ref(db, `payment_gateways/${id}`), { status: 'error', statusNote: 'Connect nahi hua', lastCheck: Date.now() }).catch(() => {}); showToast('Gateway se connect nahi hua', 'error'); }
+    };
+    window.axSetDm = async (k, v) => { try { await update(ref(db, 'site_settings/deposit_methods'), { [k]: !!v }); ok(); } catch (e) { bad(); } };
+    window.axSaveManual = async () => { try { await update(ref(db, 'site_settings/links'), { binanceText: val('dm-bin-txt'), bkashText: val('dm-bk-txt') }); audit('manual_methods', ''); ok('Saved'); } catch (e) { bad(); } };
+    window.axPrimaryGw = async (id) => { try { const ups = {}; Object.keys(M.gw).forEach(k => { ups[`${k}/priority`] = k === id ? 1 : Math.max(2, Number(M.gw[k].priority) === 1 ? 2 : Number(M.gw[k].priority) || 100); }); await update(ref(db, 'payment_gateways'), ups); ok('Primary set'); } catch (e) { bad(); } };
+    let gwMigrated = false;
+    const gwMigrate = async () => {   // purani Auto Payment key -> Gateways me (ek baar)
+        const old = M.apOld || {}; if (gwMigrated || !old.apiKey || old.migrated) return; gwMigrated = true;
+        if (Object.values(M.gw || {}).some(g => g.apiKey === old.apiKey)) { try { await update(ref(db, 'auto_payment_settings'), { migrated: true, enabled: false }); } catch (e) {} return; }
+        try { await set(push(ref(db, 'payment_gateways')), { name: 'FAM Gateway', baseUrl: 'https://famgateway.in', createPath: '/api/qr.php', verifyPath: '/api/verify-order.php', apiKey: old.apiKey, minAmount: Number(old.minAmount) || 1, maxAmount: Number(old.maxAmount) || 50000, priority: 1, enabled: !!old.enabled, createdAt: Date.now(), updatedAt: Date.now() }); await update(ref(db, 'auto_payment_settings'), { migrated: true, enabled: false }); } catch (e) { gwMigrated = false; }
+    };
+    const SW = (on, fn) => `<label class="ax-sw"><input type="checkbox" ${on ? 'checked' : ''} onchange="${fn}"><i></i></label>`;
     window.renderGw = () => {
-        const box = $id('ax-gw'); if (!box) return;
+        const box = $id('ax-gw'); if (!box) return; gwMigrate();
         const gws = Object.entries(M.gw || {}).map(([id, g]) => ({ id, ...g })).sort((a, b) => (Number(a.priority) || 100) - (Number(b.priority) || 100));
         const pays = Object.entries(M.pay || {}).map(([id, p]) => ({ id, ...p }));
         const cnt = (f) => pays.filter(f).length; const st = (p) => String(p.status || '').toLowerCase();
+        const dm = M.dpm || {}, lk = M.lkM || {};
         let body;
-        if (gwTab === 'list') body = `<div class="ax-note"><i class="fas fa-circle-info"></i><div>Unlimited gateways add kar sakte ho. Priority 1 pehle try hota hai, fail ho to agla (fallback). Create/verify path gateway ke official docs ke hisaab se daalo — presets default ZapUPI/FAM jaisa format use karte hain, FAM ke exact endpoints unki docs se confirm karo.</div></div>
-          <div class="ax-row" style="margin-bottom:12px"><button class="ax-btn" onclick="axEditGw('','zapupi')"><i class="fas fa-plus"></i> ZapUPI</button><button class="ax-btn" onclick="axEditGw('','fam')"><i class="fas fa-plus"></i> FAM Gateway</button><button class="ax-btn g" onclick="axEditGw('','')"><i class="fas fa-plus"></i> Custom gateway</button></div>
-          ${table(['Gateway', 'URL', 'Key', 'Min–Max', 'Priority', 'Status', ''], gws.map(g => { const n = pays.filter(p => p.gatewayId === g.id); return [`<b>${E(g.name)}</b>`, `<span style="font-size:12px;color:#9aa0b5;word-break:break-all">${E(g.baseUrl)}</span>`, '••••' + E(String(g.apiKey || '').slice(-3)), `${money(g.minAmount || 1)} – ${money(g.maxAmount || 50000)}`, g.priority || 100, (g.enabled ? badge('ENABLED', 'ok') : badge('DISABLED', 'err')) + `<div style="font-size:11px;color:#9aa0b5">${n.length} payments, ${n.filter(p => st(p) === 'success').length} success</div>`, `<div class="ax-row" style="gap:6px"><button class="ax-btn g s" onclick="axEditGw(${Q(g.id)})"><i class="fas fa-pen"></i></button><button class="ax-btn g s" onclick="axToggleGw(${Q(g.id)})">${g.enabled ? 'Disable' : 'Enable'}</button><button class="ax-btn r s" onclick="axDelGw(${Q(g.id)})"><i class="fas fa-trash"></i></button></div>`]; }), 'Koi naya gateway nahi. Purana ZapUPI/FAM setting "Auto Payment" tab me chal raha hai (unchanged).')}`;
+        if (gwTab === 'list') body = `<div class="ax-note"><i class="fas fa-circle-info"></i><div>Har gateway ka apna <b>ON/OFF</b> hai. Jo ON hain wahi user ko Deposit par dikhte hain; user jo chune wo pehle try hota hai, fail ho to agla (Priority 1 = pehle). Ek OFF karoge to baaki chalte rahenge.</div></div>
+          <div class="ax-row" style="margin-bottom:12px;flex-wrap:wrap"><button class="ax-btn" onclick="axEditGw('','fam')"><i class="fas fa-plus"></i> FAM Gateway</button><button class="ax-btn" onclick="axEditGw('','zapupi')"><i class="fas fa-plus"></i> ZapUPI</button><button class="ax-btn g" onclick="axEditGw('','')"><i class="fas fa-plus"></i> Custom (API URL + key)</button></div>
+          ${table(['Gateway', 'API URL', 'Min–Max', 'Prio', 'ON / OFF', ''], gws.map(g => { const n = pays.filter(p => p.gatewayId === g.id); return [`<b>${E(g.name)}</b><div style="font-size:11px;color:#9aa0b5">key ••••${E(String(g.apiKey || '').slice(-3))}</div>`, `<span style="font-size:12px;color:#9aa0b5;word-break:break-all">${E(g.baseUrl)}${E(g.createPath || '')}</span>${g.statusNote ? `<div style="font-size:11px;color:${g.status === 'ok' ? '#2bff8a' : '#ff4d6a'}">${E(g.statusNote)}</div>` : ''}`, `${money(g.minAmount || 1)} – ${money(g.maxAmount || 50000)}`, g.priority || 100, SW(g.enabled, `axToggleGw(${Q(g.id)})`) + `<div style="font-size:11px;color:#9aa0b5">${n.length} pay, ${n.filter(p => st(p) === 'success').length} ok</div>`, `<div class="ax-row" style="gap:4px;flex-wrap:wrap"><button class="ax-btn s" onclick="axTestGw(${Q(g.id)})">Test API</button><button class="ax-btn g s" onclick="axPrimaryGw(${Q(g.id)})">Primary</button><button class="ax-btn g s" onclick="axEditGw(${Q(g.id)})"><i class="fas fa-pen"></i></button><button class="ax-btn r s" onclick="axDelGw(${Q(g.id)})"><i class="fas fa-trash"></i></button></div>`]; }), 'Koi gateway nahi - upar se add karo')}
+          <h3 style="margin:18px 0 8px">Manual methods (Binance / Bangladesh)</h3>
+          <div class="ax-g">
+            <div style="grid-column:1/-1">${SW(dm.binance !== false, `axSetDm('binance',this.checked)`)} <b style="margin-left:8px">Binance / USDT</b></div>
+            ${fld('dm-bin-txt', 'Binance details (user ko dikhenge)', lk.binanceText || '', { full: 1 })}
+            <div style="grid-column:1/-1">${SW(dm.bkash !== false, `axSetDm('bkash',this.checked)`)} <b style="margin-left:8px">bKash / Nagad (Bangladesh)</b></div>
+            ${fld('dm-bk-txt', 'bKash / Nagad number + instructions', lk.bkashText || '', { full: 1 })}
+          </div><div class="ax-row" style="margin-top:10px"><button class="ax-btn" onclick="axSaveManual()"><i class="fas fa-save"></i> Save manual details</button></div>`;
         else if (gwTab === 'bonus') body = axBonusHTML();
         else body = `<div class="ax-stats"><div class="ax-stat"><b>${pays.length}</b><span>Total</span></div><div class="ax-stat"><b style="color:#2bff8a">${cnt(p => st(p) === 'success')}</b><span>Success</span></div><div class="ax-stat"><b style="color:#ffb020">${cnt(p => st(p) === 'pending')}</b><span>Pending</span></div><div class="ax-stat"><b style="color:#ff4d6a">${cnt(p => !['success', 'pending'].includes(st(p)))}</b><span>Failed / other</span></div></div>
-          ${table(['Time', 'User', 'Amount', 'Gateway', 'Status'], pays.sort((a, b) => (b.createdAt || b.ts || 0) - (a.createdAt || a.ts || 0)).slice(0, 60).map(p => [dt(p.createdAt || p.ts), E(p.username || p.uid || ''), money(p.amount), E(p.gatewayId ? ((M.gw[p.gatewayId] || {}).name || p.gatewayId) : 'Default'), badge(p.status || '—', st(p) === 'success' ? 'ok' : st(p) === 'pending' ? 'warn' : 'err')]), 'Koi payment nahi')}`;
+          ${table(['Time', 'User', 'Amount', 'Gateway', 'Status'], pays.sort((a, b) => (b.createdAt || b.ts || 0) - (a.createdAt || a.ts || 0)).slice(0, 60).map(p => [dt(p.createdAt || p.ts), E(p.username || p.uid || ''), money(p.amount), E(p.gatewayId ? ((M.gw[p.gatewayId] || {}).name || p.gatewayId) : '-'), badge(p.status || '—', st(p) === 'success' ? 'ok' : st(p) === 'pending' ? 'warn' : 'err')]), 'Koi payment nahi')}`;
         box.innerHTML = `<div class="ax"><div class="glass"><h2 class="axt"><i class="fas fa-credit-card"></i> Payment Gateways</h2>${tabsBar('', [['list', 'Gateways'], ['pay', 'Payments'], ['bonus', 'Bonus & Wallet']], gwTab, 'axGwTab')}${body}</div></div>`;
     };
     window.axEditGw = (id, preset) => {
         const g = id ? M.gw[id] : Object.assign({ enabled: true, priority: 100, minAmount: 1, maxAmount: 50000, createPath: '/api/qr.php', verifyPath: '/api/verify-order.php' }, GW_PRESETS[preset] || {});
-        const o = axModal(id ? 'Edit gateway' : 'Add gateway', `<div class="ax-g">${fld('gw-name', 'Gateway name', g.name || '', { full: 1 })}${fld('gw-url', 'Base URL', g.baseUrl || '', { full: 1, ph: 'https://...' })}${fld('gw-cp', 'Create-order path', g.createPath || '')}${fld('gw-vp', 'Verify path', g.verifyPath || '')}${fld('gw-key', 'API key', g.apiKey || '', { type: 'secret', full: 1 })}${fld('gw-min', 'Min amount ₹', g.minAmount || 1, { type: 'number', min: 1 })}${fld('gw-max', 'Max amount ₹', g.maxAmount || 50000, { type: 'number', min: 1 })}${fld('gw-prio', 'Priority (1 = pehle)', g.priority || 100, { type: 'number', min: 1 })}${fld('gw-en', 'Enabled', g.enabled !== false, { type: 'check' })}</div>`, '<button class="ax-btn g" data-x>Cancel</button><button class="ax-btn" id="gw-save"><i class="fas fa-save"></i> Save</button>');
+        const o = axModal(id ? 'Edit gateway' : 'Add gateway', `<div class="ax-g">${fld('gw-name', 'Gateway name', g.name || '', { full: 1 })}${fld('gw-url', 'API URL (base ya poora endpoint paste karo)', g.baseUrl || '', { full: 1, ph: 'https://famgateway.in' })}${fld('gw-key', 'API key', g.apiKey || '', { type: 'secret', full: 1 })}${fld('gw-cp', 'Create-order path', g.createPath || '')}${fld('gw-vp', 'Verify path', g.verifyPath || '')}${fld('gw-min', 'Min amount', g.minAmount || 1, { type: 'number', min: 1 })}${fld('gw-max', 'Max amount', g.maxAmount || 50000, { type: 'number', min: 1 })}${fld('gw-prio', 'Priority (1 = pehle)', g.priority || 100, { type: 'number', min: 1 })}${fld('gw-en', 'ON', g.enabled !== false, { type: 'check' })}</div>`, '<button class="ax-btn g" data-x>Cancel</button><button class="ax-btn" id="gw-save"><i class="fas fa-save"></i> Save</button>');
         o.querySelector('#gw-save').onclick = async () => {
-            const rec = { name: val('gw-name').trim(), baseUrl: val('gw-url').trim().replace(/\/$/, ''), createPath: val('gw-cp').trim(), verifyPath: val('gw-vp').trim(), apiKey: val('gw-key').trim(), minAmount: parseFloat(val('gw-min')) || 1, maxAmount: parseFloat(val('gw-max')) || 50000, priority: parseInt(val('gw-prio'), 10) || 100, enabled: val('gw-en'), updatedAt: Date.now() };
-            if (!rec.name || !urlOk(rec.baseUrl) || !rec.apiKey) return bad('Name, Base URL aur API key zaroori hai');
+            const n = GW_NORMALIZE(val('gw-url'), val('gw-cp').trim(), val('gw-vp').trim());
+            const rec = { name: val('gw-name').trim(), baseUrl: n ? n.base : '', createPath: n ? n.cp : '', verifyPath: n ? n.vp : '', apiKey: val('gw-key').trim(), minAmount: parseFloat(val('gw-min')) || 1, maxAmount: parseFloat(val('gw-max')) || 50000, priority: parseInt(val('gw-prio'), 10) || 100, enabled: val('gw-en'), updatedAt: Date.now() };
+            if (!rec.name || !n || !rec.apiKey) return bad('Name, API URL aur API key zaroori hai');
             if (rec.minAmount > rec.maxAmount) return bad('Min amount max se zyada nahi ho sakta');
-            try { if (id) await update(ref(db, `payment_gateways/${id}`), rec); else await set(push(ref(db, 'payment_gateways')), Object.assign(rec, { createdAt: Date.now() })); audit('save_gateway', rec.name); o.remove(); ok('Gateway saved'); } catch (e) { bad(); }
+            try { let rid = id; if (id) await update(ref(db, `payment_gateways/${id}`), rec); else { const r = push(ref(db, 'payment_gateways')); rid = r.key; await set(r, Object.assign(rec, { createdAt: Date.now() })); } audit('save_gateway', rec.name); o.remove(); ok('Saved - ab test ho raha hai'); setTimeout(() => { if (M.gw[rid]) axTestGw(rid); }, 800); } catch (e) { bad(); }
         };
     };
     window.axToggleGw = async (id) => { try { await update(ref(db, `payment_gateways/${id}`), { enabled: !M.gw[id].enabled }); audit('toggle_gateway', id); } catch (e) { bad(); } };
@@ -2063,7 +2163,7 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
         const logs = Object.values(M.apiLogs || {}).sort((a, b) => b.ts - a.ts).slice(0, 80);
         let body;
         if (apiTab === 'cfg') body = `<div class="ax-note"><i class="fas fa-triangle-exclamation"></i><div>Ye panel sirf Firebase client-side hai, isliye <b>REST API server isme nahi chalta</b>. API tabhi "Connected" dikhegi jab aap koi alag server (jaise pehle diya backend) host karke uska URL niche daaloge. URL khali = user panel me "Not connected".</div></div>
-          <div class="ax-g" style="margin:12px 0">${fld('ac-url', 'API server base URL', cfg.baseUrl || '', { full: 1, ph: 'https://api.yourdomain.com' })}${fld('ac-en', 'API enabled', !!cfg.enabled, { type: 'check', full: 1 })}</div><button class="ax-btn" onclick="axSaveApiCfg()"><i class="fas fa-save"></i> Save</button>
+          <div class="ax-g" style="margin:12px 0">${fld('ac-url', 'API server base URL (khali = apni website ka URL)', cfg.baseUrl || location.origin, { full: 1, ph: location.origin })}${fld('ac-en', 'API enabled', !!cfg.enabled, { type: 'check', full: 1 })}</div><button class="ax-btn" onclick="axSaveApiCfg()"><i class="fas fa-save"></i> Save</button>
           <h3 style="margin:22px 0 8px">API Documentation</h3><div class="ax-code">Auth header: X-API-Key: &lt;RESELLER API CODE&gt;\nGET  /api/v1/products\nGET  /api/v1/balance\nPOST /api/v1/order     {product_id (PID), duration, quantity}\nGET  /api/v1/order/{order_id}\nGET  /api/v1/orders\nResponse: JSON {success, data|error}</div>`;
         else if (apiTab === 'cli') body = table(['User', 'Key', 'Status', 'Rate/min', 'IP allowlist', 'Requests', ''], clients.map(c => { const u = (adminUsersCache || {})[c.uid || c.id] || {}; return [E(c.username || u.username || c.id), u.apiKey ? E(String(u.apiKey).slice(0, 7)) + '••••••' : '—', c.status === 'active' ? badge('ACTIVE', 'ok') : badge('REVOKED', 'err'), `<input class="ax-in" style="width:80px" type="number" min="1" id="ar-${E(c.id)}" value="${c.rateLimit || 60}">`, `<input class="ax-in" id="ai-${E(c.id)}" value="${E(c.ipAllow || '')}" placeholder="1.2.3.4, 5.6.7.8">`, c.requests || 0, `<div class="ax-row" style="gap:6px"><button class="ax-btn s" onclick="axSaveClient(${Q(c.id)})"><i class="fas fa-save"></i></button><button class="ax-btn g s" onclick="axClientStatus(${Q(c.id)},'${c.status === 'active' ? 'revoked' : 'active'}')">${c.status === 'active' ? 'Revoke' : 'Activate'}</button><button class="ax-btn r s" onclick="axRegenKey(${Q(c.id)})" title="Regenerate key"><i class="fas fa-rotate"></i></button></div>`]; }), 'Abhi kisi user ne API key nahi banayi');
         else body = `<div class="ax-note"><i class="fas fa-circle-info"></i><div>API logs tab aate hain jab API server <code>api_logs/</code> me likhe. Abhi koi server connected nahi ho to ye khali rahega.</div></div>${table(['Time', 'User', 'Endpoint', 'Status', 'IP'], logs.map(l => [dt(l.ts), E(l.username || l.uid || ''), E(l.endpoint || ''), badge(l.status || '—', Number(l.status) < 400 ? 'ok' : 'err'), E(l.ip || '')]), 'Koi API request log nahi')}`;
@@ -2101,8 +2201,8 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
         let body;
         if (medTab === 'brand') body = `<div class="ax-g">${fld('br-name', 'Website name', b.siteName || '', { full: 1 })}${fld('br-logo', 'Logo URL', b.logoUrl || '', { full: 1 })}${fld('br-fav', 'Favicon URL', b.faviconUrl || '', { full: 1 })}</div><div class="ax-row" style="margin:12px 0"><button class="ax-btn" onclick="axSaveBrand()"><i class="fas fa-save"></i> Save branding</button></div>
           <h3 style="margin:18px 0 8px">Home banners</h3>${table(['Preview', 'Title', 'Link', 'Active', ''], banners.map((x, i) => [x.url ? `<img src="${E(x.url)}" style="height:40px;border-radius:6px">` : '—', E(x.title || ''), E(x.link || ''), x.active === false ? badge('OFF', 'err') : badge('ON', 'ok'), `<button class="ax-btn r s" onclick="axDelBanner(${i})"><i class="fas fa-trash"></i></button>`]), 'Koi banner nahi')}<div class="ax-row" style="margin-top:10px"><button class="ax-btn g" onclick="axAddBanner()"><i class="fas fa-plus"></i> Add banner</button></div>`;
-        else if (medTab === 'lib') body = `<div class="ax-row" style="margin-bottom:12px"><button class="ax-btn" onclick="axAddMedia()"><i class="fas fa-link"></i> Add by URL</button><label class="ax-btn g" style="cursor:pointer"><i class="fas fa-upload"></i> Upload file<input type="file" accept="image/*,video/*" hidden onchange="axUpload(this)"></label></div><div class="ax-media">${media.map(m => `<div class="ax-mi">${/video|\.mp4|\.webm/i.test((m.type || '') + m.url) ? `<video src="${E(m.url)}" muted></video>` : `<img src="${E(m.url)}" alt="" loading="lazy">`}<div style="font-size:11px;word-break:break-all;margin:4px 0">${E(m.name || '')}</div><div class="ax-row" style="gap:4px"><button class="ax-btn g s" onclick="axUseMedia(${Q(m.id)})">Use as…</button><button class="ax-btn g s" onclick="executeClipboardCopy(${Q(m.url)})"><i class="fas fa-copy"></i></button><button class="ax-btn r s" onclick="axDelMedia(${Q(m.id)})"><i class="fas fa-trash"></i></button></div></div>`).join('') || '<div style="color:#8a8f9e">Library khali hai</div>'}</div><div class="axs" style="margin-top:10px">Upload ke liye Firebase Storage enabled hona chahiye (rules me admin write allow). Na ho to URL se add karo.</div>`;
-        else body = table(['Product', 'Video URL', ''], productsList().map(p => [E(p.name), `<input class="ax-in" id="vd-${E(p.key)}" value="${E(p.videoUrl)}" placeholder="YouTube / mp4 URL">`, `<button class="ax-btn s" onclick="axSaveVideo(${Q(p.key)})"><i class="fas fa-save"></i></button>`]), 'Koi product nahi');
+        else if (medTab === 'lib') body = axUploadCfgHTML() + `<div class="ax-row" style="margin-bottom:12px"><button class="ax-btn" onclick="axAddMedia()"><i class="fas fa-link"></i> Add by URL</button><label class="ax-btn g" style="cursor:pointer"><i class="fas fa-upload"></i> Upload file<input type="file" accept="image/*,video/*" hidden onchange="axUpload(this)"></label></div><div class="ax-media">${media.map(m => `<div class="ax-mi">${/video|\.mp4|\.webm/i.test((m.type || '') + m.url) ? `<video src="${E(m.url)}" muted></video>` : `<img src="${E(m.url)}" alt="" loading="lazy">`}<div style="font-size:11px;word-break:break-all;margin:4px 0">${E(m.name || '')}</div><div class="ax-row" style="gap:4px"><button class="ax-btn g s" onclick="axUseMedia(${Q(m.id)})">Use as…</button><button class="ax-btn g s" onclick="executeClipboardCopy(${Q(m.url)})"><i class="fas fa-copy"></i></button><button class="ax-btn r s" onclick="axDelMedia(${Q(m.id)})"><i class="fas fa-trash"></i></button></div></div>`).join('') || '<div style="color:#8a8f9e">Library khali hai</div>'}</div><div class="axs" style="margin-top:10px">Upload ke liye Firebase Storage enabled hona chahiye (rules me admin write allow). Na ho to URL se add karo.</div>`;
+        else body = axUploadCfgHTML() + table(['Product', 'Video URL', ''], productsList().map(p => [E(p.name), `<input class="ax-in" id="vd-${E(p.key)}" value="${E(p.videoUrl)}" placeholder="YouTube / mp4 URL">`, `<button class="ax-btn s" onclick="axSaveVideo(${Q(p.key)})"><i class="fas fa-save"></i></button>`]), 'Koi product nahi');
         box.innerHTML = `<div class="ax"><div class="glass"><h2 class="axt"><i class="fas fa-photo-film"></i> Media, Videos &amp; Branding</h2>${tabsBar('', [['brand', 'Branding & Banners'], ['lib', 'Media library'], ['vid', 'Product videos']], medTab, 'axMedTab')}${body}</div></div>`;
     };
     window.axSaveBrand = async () => { for (const i of ['br-logo', 'br-fav']) if (val(i).trim() && !urlOk(val(i))) return bad('URL http(s):// se start ho'); try { await update(ref(db, 'branding'), { siteName: val('br-name').trim(), logoUrl: val('br-logo').trim(), faviconUrl: val('br-fav').trim() }); audit('branding', val('br-name')); ok('Branding saved'); } catch (e) { bad(); } };
@@ -2111,8 +2211,8 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
     window.axDelBanner = async (i) => { const a = bannerArr(); a.splice(i, 1); try { await set(ref(db, 'branding/banners'), a.length ? a : null); ok('Removed'); } catch (e) { bad(); } };
     window.axAddMedia = () => { const o = axModal('Add media URL', `<div class="ax-g">${fld('md-url', 'URL', '', { full: 1 })}${fld('md-name', 'Name', '', { full: 1 })}</div>`, '<button class="ax-btn g" data-x>Cancel</button><button class="ax-btn" id="md-go">Add</button>'); o.querySelector('#md-go').onclick = async () => { if (!urlOk(val('md-url'))) return bad('URL sahi daalo'); try { await set(push(ref(db, 'media')), { url: val('md-url').trim(), name: val('md-name').trim(), type: /\.(mp4|webm)(\?|$)/i.test(val('md-url')) ? 'video' : 'image', createdAt: Date.now() }); o.remove(); ok('Added'); } catch (e) { bad(); } }; };
     window.axUpload = async (inp) => {
-        const f = inp.files && inp.files[0]; if (!f) return; if (f.size > 25 * 1024 * 1024) return bad('File 25MB se badi hai');
-        try { showToast('Uploading...'); const st = getStorage(app); const path = `media/${Date.now()}_${f.name.replace(/[^A-Za-z0-9._-]/g, '_')}`; const r = sRef(st, path); await uploadBytes(r, f); const url = await getDownloadURL(r); await set(push(ref(db, 'media')), { url, name: f.name, type: f.type, path, createdAt: Date.now() }); audit('upload_media', f.name); ok('Uploaded'); } catch (e) { bad('Upload fail: Firebase Storage enabled/rules check karo'); }
+        const f = inp.files && inp.files[0]; if (!f) return; if (f.size > 100 * 1024 * 1024) { inp.value = ''; return bad('File 100MB se badi hai'); }
+        try { showToast('Uploading...'); const r = await uploadFile(f, 'media', (p) => showToast('Uploading ' + p + '%')); await set(push(ref(db, 'media')), { url: r.url, name: f.name, type: f.type, path: r.path, createdAt: Date.now() }); audit('upload_media', f.name); ok('Uploaded'); } catch (e) { bad(upErr(e)); }
         inp.value = '';
     };
     window.axDelMedia = async (id) => { if (!confirm('Media delete?')) return; const m = M.media[id]; try { if (m && m.path) { try { await deleteObject(sRef(getStorage(app), m.path)); } catch (e) {} } await remove(ref(db, `media/${id}`)); ok('Deleted'); } catch (e) { bad(); } };
@@ -2167,51 +2267,8 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
     };
 
 
-    /* ================= TELEGRAM BOTS (PAID HOSTING) ================= */
-    const TGA_DAY = 86400000;
-    window.renderTgBots = () => {
-        const box = $id('ax-tgb'); if (!box) return;
-        const cfg = M.tgbCfg || {}, now = Date.now();
-        const bots = Object.entries(M.tgb || {}).map(([uid, b]) => ({ uid, ...b })).sort((x, y) => (y.createdAt || 0) - (x.createdAt || 0));
-        const orders = Object.values(M.tgo || {}).sort((x, y) => (y.ts || 0) - (x.ts || 0));
-        const revenue = orders.reduce((n, o) => n + (Number(o.price) || 0), 0);
-        const activeN = bots.filter(b => Number(b.paidUntil) > now && !b.blocked).length, runN = bots.filter(b => b.status === 'running' && Number(b.paidUntil) > now).length;
-        const hb = Number((M.tgm || {}).ts) || 0, online = now - hb < 90000;
-        const t = (n, l, c) => `<div class="ax-stat"><b ${c ? `style="color:${c}"` : ''}>${n}</b><span>${l}</span></div>`;
-        const stCol = { running: '#2bff8a', queued: '#ffb800', starting: '#ffb800', stopped: '#9aa0b5' };
-        const rows = bots.map(b => {
-            const act = Number(b.paidUntil) > now; const st = !act ? 'expired' : (b.blocked ? 'blocked' : (b.desired === 'off' ? 'stopped' : (b.status || 'queued')));
-            return [`<b>${E(b.username || b.uid)}</b><div style="font-size:11px;color:#9aa0b5">${E(b.uid)}</div>`,
-                `${E(b.shopName || '')}<div style="font-size:12px;color:#9aa0b5">@${E(String(b.botUsername || '').replace(/^@/, ''))}</div>`,
-                `<span style="font-size:12px">ID ${E(b.adminId || '')}<br>${E(b.adminContact || '')}</span>`,
-                `<span style="color:${stCol[st] || '#ff5470'};font-weight:600">${E(st)}</span>${b.statusMsg ? `<div style="font-size:11px;color:#9aa0b5">${E(String(b.statusMsg).slice(0, 80))}</div>` : ''}`,
-                dt(b.paidUntil),
-                `<div class="ax-row" style="gap:4px;flex-wrap:wrap"><button class="ax-btn s" onclick="axTgbToggle('${E(b.uid)}')">${b.desired === 'off' ? 'Start' : 'Stop'}</button><button class="ax-btn s" onclick="axTgbDays('${E(b.uid)}')">+Days</button><button class="ax-btn s" onclick="axTgbBlock('${E(b.uid)}')">${b.blocked ? 'Unblock' : 'Block'}</button><button class="ax-btn g s" onclick="axTgbToken('${E(b.uid)}')">Token</button><button class="ax-btn g s" onclick="axTgbDel('${E(b.uid)}')"><i class="fas fa-trash"></i></button></div>`];
-        });
-        box.innerHTML = `<div class="ax"><div class="glass"><h2 class="axt"><i class="fas fa-robot"></i> Telegram Bots (Paid)</h2>
-        <div class="ax-note"><i class="fas fa-circle-info"></i><div>User panel ke <b>My Telegram Bot</b> se user apna bot token, admin ID, contact, bot username aur shop name daal kar plan kharidta hai (wallet se). <b>bot_manager.py</b> server par chalna chahiye - wahi har user ka bot automatic run/stop karta hai. Runner: <b style="color:${online ? '#2bff8a' : '#ff5470'}">${online ? 'ONLINE' : 'OFFLINE'}</b>${hb ? ` (last ${dt(hb)})` : ''}</div></div>
-        <div class="ax-stats">${t(bots.length, 'Total bots')}${t(activeN, 'Active plans', '#2bff8a')}${t(runN, 'Running now', '#2bff8a')}${t(orders.length, 'Total purchases')}${t(money(revenue), 'Revenue', '#ffb800')}</div>
-        <h3 style="margin:14px 0 8px">Price &amp; settings</h3>
-        <div class="ax-g">${fld('tgs-en', 'Sale ON (users kharid sakte hain)', cfg.enabled !== false, { type: 'check', full: 1 })}${fld('tgs-price', 'Price ₹ (0 = free)', cfg.price != null ? cfg.price : '', { type: 'number', min: 0, step: '0.01' })}${fld('tgs-days', 'Validity (din)', cfg.days || 30, { type: 'number', min: 1 })}</div>
-        <div class="ax-row" style="margin:10px 0"><button class="ax-btn" onclick="axTgbSaveCfg()"><i class="fas fa-save"></i> Save price</button></div>
-        <h3 style="margin:18px 0 8px">All user bots</h3>${table(['User', 'Shop / Bot', 'Admin', 'Status', 'Valid till', 'Control'], rows, 'Abhi kisi user ne bot nahi liya')}
-        <h3 style="margin:18px 0 8px">Purchases (kisne kya kharida)</h3>${table(['Time', 'User', 'Bot', 'Type', 'Price', 'Days'], orders.slice(0, 80).map(o => [dt(o.ts), E(o.username || o.uid), `${E(o.shopName || '')} @${E(String(o.botUsername || '').replace(/^@/, ''))}`, E(o.type || ''), money(o.price), E(o.days || '')]), 'Abhi koi purchase nahi')}
-        </div></div>`;
-    };
-    window.axTgbSaveCfg = async () => {
-        const price = parseFloat(val('tgs-price')), days = parseInt(val('tgs-days'), 10);
-        if (isNaN(price) || price < 0) return bad('Price sahi daalo (0 ya zyada)'); if (!(days >= 1)) return bad('Validity kam se kam 1 din');
-        try { await update(ref(db, 'site_settings/tgbot_hosting'), { enabled: !!val('tgs-en'), price: Math.round(price * 100) / 100, days, updatedAt: Date.now() }); audit('tgbot_price', `${price}/${days}d`); ok('Saved'); } catch (e) { bad(); }
-    };
-    const tgbRef = (uid) => ref(db, `tg_bots/${uid}`);
-    window.axTgbToggle = async (uid) => { const b = (M.tgb || {})[uid]; if (!b) return; const off = b.desired !== 'off'; try { await update(tgbRef(uid), { desired: off ? 'off' : 'on', status: off ? 'stopped' : 'queued', statusMsg: off ? 'Admin ne stop kiya' : 'Admin ne start kiya', rev: Date.now() }); audit('tgbot_toggle', uid); ok(off ? 'Stopping' : 'Starting'); } catch (e) { bad(); } };
-    window.axTgbDays = async (uid) => { const b = (M.tgb || {})[uid]; if (!b) return; const n = parseInt(prompt('Kitne din add karne hain? (negative = kam karna)', '30'), 10); if (!n) return; const base = Math.max(Date.now(), Number(b.paidUntil) || 0); try { await update(tgbRef(uid), { paidUntil: Math.max(Date.now() - 1000, base + n * TGA_DAY), rev: Date.now() }); audit('tgbot_days', `${uid} ${n}`); ok('Updated'); } catch (e) { bad(); } };
-    window.axTgbBlock = async (uid) => { const b = (M.tgb || {})[uid]; if (!b) return; try { await update(tgbRef(uid), { blocked: !b.blocked, status: !b.blocked ? 'blocked' : 'queued', statusMsg: !b.blocked ? 'Admin ne block kiya' : 'Unblocked', rev: Date.now() }); audit('tgbot_block', uid); ok('Done'); } catch (e) { bad(); } };
-    window.axTgbToken = (uid) => { const b = (M.tgb || {})[uid]; if (b) prompt('Bot token (copy karo):', b.token || ''); };
-    window.axTgbDel = async (uid) => { if (!confirm('Is user ka bot record delete karna hai? Bot band ho jayega.')) return; try { await remove(tgbRef(uid)); audit('tgbot_delete', uid); ok('Deleted'); } catch (e) { bad(); } };
-
     /* ================= LISTENERS + TAB HOOK ================= */
-    const RENDER = { PidMgmt: 'renderPid', PriceMgmt: 'renderPrice', Suppliers: 'renderSup', Gateways: 'renderGw', ApiMgmt: 'renderApi', TelegramSet: 'renderTg', TgBots: 'renderTgBots', MediaMgr: 'renderMedia', Announce: 'renderAnn', SecuritySet: 'renderSec' };
+    const RENDER = { PidMgmt: 'renderPid', PriceMgmt: 'renderPrice', Suppliers: 'renderSup', Gateways: 'renderGw', ApiMgmt: 'renderApi', TelegramSet: 'renderTg', MediaMgr: 'renderMedia', Announce: 'renderAnn', SecuritySet: 'renderSec' };
     let axCur = '';
     const axRefresh = () => { const f = RENDER[axCur]; if (f && window[f]) { try { window[f](); } catch (e) { console.error(e); } } try { renderReport(); } catch (e) {} };
     const _sw = window.switchTab;
@@ -2223,7 +2280,7 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
         w('store_products', 'meta'); w('store_management', 'mgmt'); w('key_stock', 'stock'); w('product_maintenance', 'maint');
         w('suppliers', 'sup'); w('pid_mappings', 'map'); w('payment_gateways', 'gw'); w('auto_payments', 'pay'); w('orders', 'ord');
         w('api_clients', 'cli'); w('announcements', 'ann'); w('branding', 'brand'); w('media', 'media'); w('telegram_settings', 'tg');
-        w('site_settings/telegram', 'tgPub'); w('tg_bots', 'tgb'); w('tg_bot_orders', 'tgo'); w('site_settings/tgbot_hosting', 'tgbCfg'); w('tg_manager', 'tgm'); w('api_settings', 'apiCfg'); w('password_requests', 'pw'); w('admin_audit', 'audit');
+        w('site_settings/telegram', 'tgPub'); w('site_settings/deposit_methods', 'dpm'); w('site_settings/upload', 'upl'); w('site_settings/links', 'lkM'); w('auto_payment_settings', 'apOld'); w('api_settings', 'apiCfg'); w('password_requests', 'pw'); w('admin_audit', 'audit');
         w('payment_settings', 'paySet'); w('supplier_logs', 'supLogs'); w('gateway_logs', 'gwLogs'); w('api_logs', 'apiLogs'); w('supplier_settings', 'legacySup');
     };
 
@@ -2249,11 +2306,28 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
 
     /* ================= VIDEO UPLOAD (Add/Edit Product + Media) ================= */
     const uploadFile = (file, folder, onProg) => new Promise((resolve, reject) => {
+        const u = M.upl || {};
+        if (u.cloudName && u.preset) {   // Cloudinary unsigned upload (video/image, browser se seedha)
+            const x = new XMLHttpRequest(); x.open('POST', `https://api.cloudinary.com/v1_1/${encodeURIComponent(u.cloudName)}/auto/upload`);
+            x.upload.onprogress = (e) => { if (e.lengthComputable && onProg) onProg(Math.round(e.loaded / e.total * 100)); };
+            x.onerror = () => reject(new Error('Network error - internet check karo'));
+            x.onload = () => { let j = {}; try { j = JSON.parse(x.responseText); } catch (e) {} if (x.status >= 200 && x.status < 300 && j.secure_url) resolve({ url: j.secure_url, path: '' }); else reject(new Error('Cloudinary: ' + ((j.error && j.error.message) || ('HTTP ' + x.status)))); };
+            const fd = new FormData(); fd.append('file', file); fd.append('upload_preset', u.preset); fd.append('folder', folder); x.send(fd); return;
+        }
         try {
             const path = `${folder}/${Date.now()}_${file.name.replace(/[^A-Za-z0-9._-]/g, '_')}`; const r = sRef(getStorage(app), path); const t = uploadBytesResumable(r, file, { contentType: file.type });
             t.on('state_changed', sn => onProg && onProg(Math.round(sn.bytesTransferred / sn.totalBytes * 100)), reject, async () => { try { resolve({ url: await getDownloadURL(t.snapshot.ref), path }); } catch (e) { reject(e); } });
         } catch (e) { reject(e); }
     });
+    const upErr = (e) => {
+        const m = String((e && (e.code || e.message)) || e);
+        if (/unauthorized|unauthenticated/i.test(m)) return 'Firebase Storage rules write allow nahi kar rahe (storage/unauthorized). Easy fix: Media > "Upload settings" me free Cloudinary daalo.';
+        if (/no-default-bucket|bucket|object-not-found|storage\/unknown|billing|quota/i.test(m)) return 'Firebase Storage enable nahi hai ya paid plan maang raha hai. Easy fix: Media > "Upload settings" me free Cloudinary daalo.';
+        if (/network|retry-limit|offline/i.test(m)) return 'Internet / network error - dobara try karo.';
+        return 'Upload fail: ' + m.slice(0, 140);
+    };
+    window.axUploadCfgHTML = () => { const u = M.upl || {}; return `<div class="ax-note"><i class="fas fa-cloud-arrow-up"></i><div><b>Upload settings (video/image upload ke liye)</b><br>Free Cloudinary account banao &rarr; Settings &rarr; Upload &rarr; <b>Unsigned</b> upload preset banao. Cloud name + preset yahan daalo. ${u.cloudName && u.preset ? '<b style="color:#2bff8a">Cloudinary ON</b>' : 'Khali = Firebase Storage use hoga.'}</div></div><div class="ax-g" style="margin:10px 0">${fld('up-cloud', 'Cloudinary cloud name', u.cloudName || '')}${fld('up-preset', 'Unsigned upload preset', u.preset || '')}</div><div class="ax-row" style="margin-bottom:14px"><button class="ax-btn" onclick="axSaveUpl()"><i class="fas fa-save"></i> Save upload settings</button></div>`; };
+    window.axSaveUpl = async () => { try { await set(ref(db, 'site_settings/upload'), { cloudName: val('up-cloud').trim(), preset: val('up-preset').trim(), updatedAt: Date.now() }); audit('upload_settings', ''); ok('Saved'); } catch (e) { bad(); } };
     window.axVidBox = (t) => `<div class="ax-vup" data-t="${t}"><label class="ax-btn" style="cursor:pointer"><i class="fas fa-video"></i> Video upload karo<input type="file" accept="video/*,image/*" hidden class="ax-vfile"></label><span class="ax-vst" style="font-size:12px;color:#9aa0b5"></span><div class="ax-vprev"></div></div>`;
     const vTarget = (box) => box.dataset.t === 'card' ? box.closest('.edit-card').querySelector('.ec-video') : $id('prod-video');
     const vPreview = (box, url) => { box.querySelector('.ax-vprev').innerHTML = url ? (/\.(png|jpe?g|gif|webp)(\?|$)/i.test(url) ? `<img src="${E(url)}" style="max-width:100%;max-height:200px;border-radius:12px;margin-top:8px">` : (/youtu/.test(url) ? '' : `<video src="${E(url)}" controls muted playsinline style="width:100%;max-height:220px;border-radius:12px;margin-top:8px;background:#000"></video>`)) : ''; };
@@ -2263,7 +2337,7 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
         if (!/^(video|image)\//.test(f.type)) return bad('Sirf video ya image file chuno');
         if (f.size > 100 * 1024 * 1024) return bad('File 100MB se badi hai');
         try { st.textContent = 'Uploading 0%...'; const r = await uploadFile(f, 'product_media', p => st.textContent = `Uploading ${p}%...`); vTarget(box).value = r.url; vTarget(box).dispatchEvent(new Event('input', { bubbles: true })); st.textContent = 'Upload ho gaya ✓ — ab Deploy/Save karo'; vPreview(box, r.url); try { await set(push(ref(db, 'media')), { url: r.url, name: f.name, type: f.type, path: r.path, createdAt: Date.now() }); } catch (x) {} audit('upload_video', f.name); }
-        catch (err) { st.textContent = ''; bad('Upload nahi hua. Firebase Storage enable + rules (admin write) check karo, ya neeche link paste karo.'); }
+        catch (err) { st.textContent = ''; bad(upErr(err)); }
         inp.value = '';
     });
     // Add Product: photo ki jagah video upload
@@ -2302,6 +2376,41 @@ table.ax-t{width:100%;border-collapse:collapse;min-width:640px}.ax-t th{font-siz
 
     window.executeClipboardCopy = window.executeClipboardCopy || ((t) => { try { navigator.clipboard.writeText(t); showToast('Copied'); } catch (e) { showToast('Copy fail','error'); } });
 
+
+/* ===== compact navigation: groups + search + quick bar ===== */
+(function () {
+  const GROUPS = [
+    ['STORE', ['Dashboard', 'ProductManager', 'EditProduct', 'KeysStock', 'PidMgmt', 'PriceMgmt', 'Orders', 'Resellers']],
+    ['MONEY', ['Deposits', 'Gateways', 'Suppliers']],
+    ['TELEGRAM & API', ['TelegramSet', 'ApiMgmt']],
+    ['SITE', ['Tickets', 'Links', 'MediaMgr', 'Announce', 'Maintenance', 'SecuritySet']]
+  ];
+  const QUICK = [['Dashboard', 'Dashboard'], ['Orders', 'Orders'], ['Deposits', 'Deposits'], ['Gateways', 'Gateways'], ['Suppliers', 'Suppliers'], ['TG Bots'], ['PriceMgmt', 'Prices'], ['Tickets', 'Tickets']];
+  function build() {
+    const list = document.querySelector('.sidebar-menu-list'); if (!list || list.dataset.done) return; list.dataset.done = 1;
+    const items = {}; list.querySelectorAll('.sidebar-item[id^="menu-"]').forEach(el => items[el.id.slice(5)] = el);
+    const logout = list.querySelector('.menu-logout-btn'); const used = new Set();
+    const si = document.createElement('input'); si.className = 'sb-search'; si.placeholder = 'Search menu...'; list.parentNode.insertBefore(si, list);
+    const frag = document.createDocumentFragment();
+    GROUPS.forEach(([name, ids]) => {
+      const h = document.createElement('div'); h.className = 'sb-grp'; h.innerHTML = `<span>${name}</span><span>▾</span>`; h.onclick = () => h.classList.toggle('shut');
+      const box = document.createElement('div'); box.className = 'sb-box';
+      ids.forEach(k => { if (items[k]) { box.appendChild(items[k]); used.add(k); } });
+      Object.keys(items).forEach(k => { if (!used.has(k) && name === 'SITE') { box.appendChild(items[k]); used.add(k); } });
+      frag.appendChild(h); frag.appendChild(box);
+    });
+    list.querySelectorAll('.sidebar-menu-cat').forEach(c => c.remove());
+    list.innerHTML = ''; list.appendChild(frag); if (logout) list.appendChild(logout);
+    si.oninput = () => { const q = si.value.trim().toLowerCase(); list.querySelectorAll('.sb-grp').forEach(g => g.classList.remove('shut')); list.querySelectorAll('.sidebar-item[id^="menu-"]').forEach(el => el.style.display = !q || el.textContent.toLowerCase().includes(q) ? '' : 'none'); };
+    const qn = document.createElement('div'); qn.id = 'quick-nav';
+    QUICK.forEach(([k, l]) => { const b = document.createElement('button'); b.dataset.t = k; b.textContent = l; b.onclick = () => switchTab(k); qn.appendChild(b); });
+    const c = document.querySelector('.container'); if (c) c.insertBefore(qn, c.firstChild);
+    const sync = () => qn.querySelectorAll('button').forEach(b => b.classList.toggle('on', !!document.querySelector('#menu-' + b.dataset.t + '.active-menu')));
+    const old = window.switchTab; window.switchTab = (t) => { old(t); sync(); window.scrollTo({ top: 0 }); };
+    sync();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
 </script>
 </body>
 </html>

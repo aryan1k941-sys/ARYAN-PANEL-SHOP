@@ -734,13 +734,45 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
 @media(min-width:0px){.px-pr>.c-n{order:1}.px-pr>.c-pid{order:2}.px-pr>.c-st{order:3}.px-pr>.c-cat{order:4}.px-pr>.c-p{order:5}.px-pr>.c-d{order:6}.px-pr{grid-template-columns:auto auto 1fr}.px-pr>.c-cat{justify-self:end}}
 .sidebar-logo-icon-bg img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
 .cy-ring img{width:70px;height:70px;border-radius:50%;object-fit:cover;display:block}
-.tgb-st{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;border:1px solid currentColor}
-.tgb-g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tgb-g .full{grid-column:1/-1}
-.tgb-g label{display:block;font-size:12px;opacity:.75;margin-bottom:4px}
-.tgb-g .px-in{width:100%;box-sizing:border-box}
-@media(max-width:560px){.tgb-g{grid-template-columns:1fr}}
+.sidebar-item{padding:8px 12px!important;gap:10px!important;font-size:12.5px!important}
+.sidebar-label{margin:8px 12px 2px!important}
+.ap-methods{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.ap-methods .ap-method{margin-bottom:0;cursor:pointer;opacity:.55}
+.ap-methods .ap-method.sel{opacity:1}
+.ap-methods .ap-method:not(.sel) .tick{background:#2a3342}
+.ap-methods .ap-method:not(.sel){border-color:#2a3342}
+html[data-theme="ocean"]{--bg-color:#06121f;--sidebar-bg:#081a2c;--input-bg:#0e2237;--card-bg:#081a2ccc;--card-border:#22d3ee33;--neon-cyan:#22d3ee;--neon-purple:#3b82f6;--neon-pink:#0ea5e9;--rb:linear-gradient(90deg,#22d3ee,#3b82f6,#06b6d4,#60a5fa,#22d3ee);--rb-conic:conic-gradient(from var(--rb-a),#22d3ee,#3b82f6,#06b6d4,#60a5fa,#22d3ee)}
+html[data-theme="emerald"]{--bg-color:#06140e;--sidebar-bg:#08201a;--input-bg:#0d2a21;--card-bg:#08201acc;--card-border:#34d39933;--neon-cyan:#34d399;--neon-purple:#10b981;--neon-pink:#84cc16;--rb:linear-gradient(90deg,#34d399,#10b981,#a3e635,#14b8a6,#34d399);--rb-conic:conic-gradient(from var(--rb-a),#34d399,#10b981,#a3e635,#14b8a6,#34d399)}
+html[data-theme="sunset"]{--bg-color:#160a08;--sidebar-bg:#1f0f0b;--input-bg:#2a1511;--card-bg:#1f0f0bcc;--card-border:#fb923c33;--neon-cyan:#fb923c;--neon-purple:#f43f5e;--neon-pink:#fbbf24;--rb:linear-gradient(90deg,#f43f5e,#fb923c,#fbbf24,#ec4899,#f43f5e);--rb-conic:conic-gradient(from var(--rb-a),#f43f5e,#fb923c,#fbbf24,#ec4899,#f43f5e)}
+html[data-theme="royal"]{--bg-color:#0d0820;--sidebar-bg:#130b2e;--input-bg:#1b1240;--card-bg:#130b2ecc;--card-border:#c084fc33;--neon-cyan:#c084fc;--neon-purple:#8b5cf6;--neon-pink:#e879f9;--rb:linear-gradient(90deg,#8b5cf6,#c084fc,#e879f9,#6366f1,#8b5cf6);--rb-conic:conic-gradient(from var(--rb-a),#8b5cf6,#c084fc,#e879f9,#6366f1,#8b5cf6)}
+html[data-theme="crimson"]{--bg-color:#130607;--sidebar-bg:#1c0a0c;--input-bg:#26100f;--card-bg:#1c0a0ccc;--card-border:#ff5c5c33;--neon-cyan:#ff5c5c;--neon-purple:#e11d48;--neon-pink:#ff7a59;--rb:linear-gradient(90deg,#ff2a2a,#e11d48,#ff7a59,#fb7185,#ff2a2a);--rb-conic:conic-gradient(from var(--rb-a),#ff2a2a,#e11d48,#ff7a59,#fb7185,#ff2a2a)}
+html[data-theme="gold"]{--bg-color:#0f0d06;--sidebar-bg:#17140a;--input-bg:#211c0d;--card-bg:#17140acc;--card-border:#fcd34d33;--neon-cyan:#fcd34d;--neon-purple:#f59e0b;--neon-pink:#fde68a;--rb:linear-gradient(90deg,#fcd34d,#f59e0b,#fde68a,#d97706,#fcd34d);--rb-conic:conic-gradient(from var(--rb-a),#fcd34d,#f59e0b,#fde68a,#d97706,#fcd34d)}
+html[data-theme="mono"]{--bg-color:#0c0d10;--sidebar-bg:#121419;--input-bg:#1b1e26;--card-bg:#121419cc;--card-border:#e5e7eb33;--neon-cyan:#e5e7eb;--neon-purple:#9ca3af;--neon-pink:#d1d5db;--rb:linear-gradient(90deg,#f3f4f6,#9ca3af,#e5e7eb,#6b7280,#f3f4f6);--rb-conic:conic-gradient(from var(--rb-a),#f3f4f6,#9ca3af,#e5e7eb,#6b7280,#f3f4f6)}
+html[data-theme] body{background-color:var(--bg-color)!important}
+html[data-theme] .navbar,html[data-theme] .sidebar{background:var(--sidebar-bg)!important}
+html[data-theme] .sidebar-item.active-menu{background:linear-gradient(90deg,color-mix(in srgb,var(--neon-cyan) 28%,transparent),color-mix(in srgb,var(--neon-purple) 24%,transparent))!important}
+#thm-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100000;display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+#thm-box{background:#14121d;border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px;width:100%;max-width:360px;color:#fff;font-family:inherit}
+#thm-box h3{margin:0 0 12px;font-size:15px}#thm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+#thm-grid button{background:none;border:2px solid transparent;border-radius:14px;padding:6px 2px;color:#cbd0dc;font-size:11px;cursor:pointer}#thm-grid button.on{border-color:#fff}
+#thm-grid i{display:block;width:44px;height:44px;border-radius:50%;margin:0 auto 5px;border:2px solid rgba(255,255,255,.25)}
 </style>
+<script>
+/* panel themes (user + admin share the same choice) */
+(function () {
+  var SW = {"rainbow": ["Rainbow", "conic-gradient(#ff2a2a,#ffe600,#2bff5a,#00e5ff,#b516ff,#ff2a2a)"], "ocean": ["Ocean", "linear-gradient(135deg,#06121f 0%,#3b82f6 55%,#22d3ee 100%)"], "emerald": ["Emerald", "linear-gradient(135deg,#06140e 0%,#10b981 55%,#34d399 100%)"], "sunset": ["Sunset", "linear-gradient(135deg,#160a08 0%,#f43f5e 55%,#fb923c 100%)"], "royal": ["Royal", "linear-gradient(135deg,#0d0820 0%,#8b5cf6 55%,#c084fc 100%)"], "crimson": ["Crimson", "linear-gradient(135deg,#130607 0%,#e11d48 55%,#ff5c5c 100%)"], "gold": ["Gold", "linear-gradient(135deg,#0f0d06 0%,#f59e0b 55%,#fcd34d 100%)"], "mono": ["Graphite", "linear-gradient(135deg,#0c0d10 0%,#9ca3af 55%,#e5e7eb 100%)"]}, KEY = 'panel_theme_v2';
+  function apply(k) { var h = document.documentElement; if (!k || k === 'rainbow' || !SW[k]) h.removeAttribute('data-theme'); else h.setAttribute('data-theme', k); try { var m = document.querySelector('meta[name=theme-color]'); if (m) m.content = getComputedStyle(h).getPropertyValue('--bg-color') || '#0b0a12'; } catch (e) {} }
+  try { apply(localStorage.getItem(KEY)); } catch (e) {}
+  window.openThemes = window.cycleTheme = function () {
+    if (document.getElementById('thm-ov')) return;
+    var cur = ''; try { cur = localStorage.getItem(KEY) || 'rainbow'; } catch (e) {}
+    var ov = document.createElement('div'); ov.id = 'thm-ov';
+    ov.innerHTML = '<div id="thm-box"><h3>Choose theme</h3><div id="thm-grid">' + Object.keys(SW).map(function (k) { return '<button data-k="' + k + '" class="' + (k === cur ? 'on' : '') + '"><i style="background:' + SW[k][1] + '"></i>' + SW[k][0] + '</button>'; }).join('') + '</div></div>';
+    ov.onclick = function (e) { if (e.target === ov) ov.remove(); var b = e.target.closest && e.target.closest('button[data-k]'); if (b) { try { localStorage.setItem(KEY, b.dataset.k); } catch (x) {} apply(b.dataset.k); ov.remove(); } };
+    document.body.appendChild(ov);
+  };
+})();
+</script>
 </head>
 <body>
     <div id="maint-overlay">
@@ -867,7 +899,6 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
             <div class="sidebar-item" id="menu-Premium" onclick="switchTab('Premium')"><i class="fas fa-crown"></i> Premium Plans</div>
             <div class="sidebar-item" id="menu-ApiAccess" onclick="switchTab('ApiAccess')"><i class="fas fa-code"></i> API / Reseller Access</div>
             <div class="sidebar-item" id="menu-TelegramInfo" onclick="switchTab('TelegramInfo')"><i class="fab fa-telegram"></i> Telegram</div>
-            <div class="sidebar-item" id="menu-TgBot" onclick="switchTab('TgBot')"><i class="fas fa-robot"></i> My Telegram Bot <span class="tgb-st" style="color:#ffd42a;font-size:10px;padding:1px 7px;margin-left:4px">PAID</span></div>
             <div class="sidebar-item" id="menu-AddFunds" onclick="switchTab('AddFunds')"><i class="fas fa-indian-rupee-sign"></i> Deposit</div>
             <div class="sidebar-item" id="menu-MyKeys" onclick="switchTab('MyKeys')"><i class="fas fa-history"></i> Key History</div>
             <div class="sidebar-item" id="menu-History" onclick="switchTab('History')"><i class="fas fa-chart-bar"></i> Statistics</div>
@@ -1107,7 +1138,6 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
         <div class="tab-view-section hidden" id="view-Premium"><div class="px-wrap" id="px-premium"></div></div>
         <div class="tab-view-section hidden" id="view-ApiAccess"><div class="px-wrap" id="px-api"></div></div>
         <div class="tab-view-section hidden" id="view-TelegramInfo"><div class="px-wrap" id="px-tg"></div></div>
-        <div class="tab-view-section hidden" id="view-TgBot"><div class="px-wrap" id="px-tgbot"></div></div>
         <div class="tab-view-section hidden" id="view-BuyKeys">
             <button class="lnk-btn lnk-green" onclick="openLink('donateUrl')"><i class="fas fa-globe"></i> DONATE MONEY FOR ANY HELP ❤️</button>
             <div class="bk-balbar"><span>AVAILABLE BALANCE:</span><b>₹<span id="bk-bal">0.00</span></b></div>
@@ -1181,7 +1211,7 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
                 </div>
 
                 <div class="ap-label"><i class="far fa-credit-card"></i> Payment Method</div>
-                <div class="ap-method"><div class="tick"><i class="fas fa-check"></i></div><b>UPI QR Pay</b><span>INR</span></div>
+                <div id="ap-method-list" class="ap-methods"></div>
 
                 <button class="ap-btn" id="ap-pay-btn" type="button" onclick="apStartPayment()"><i class="fas fa-plus-circle"></i> Add Balance</button>
 
@@ -1191,7 +1221,7 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
             <div id="manual-pay-box">
             <div class="generator-card glass deposit-container" style="text-align:center;">
                 <span class="field-label"><i class="fas fa-info-circle"></i> Payment abhi available nahi hai</span>
-                <p style="color:var(--text-muted);font-size:13px;margin-top:8px;">Deposit sirf FamGateway UPI se hota hai. Admin se contact karo.</p>
+                <p style="color:var(--text-muted);font-size:13px;margin-top:8px;">Abhi koi payment gateway ON nahi hai. Neeche Binance / Bkash ya Support se admin se contact karo.</p>
             </div>
             </div>
             </div>
@@ -1432,25 +1462,8 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
         const apEsc = (t) => String(t ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
         function syncAutoPaymentSettings() {
-            onValue(ref(db, 'auto_payment_settings'), (snap) => {
-                const d = snap.exists() ? snap.val() : {};
-                apCfg = {
-                    enabled: !!d.enabled && !!d.apiKey,
-                    apiUrl: FG_BASE,
-                    apiKey: d.apiKey || '',
-                    siteUrl: d.siteUrl || '',
-                    min: Math.max(0.01, Number(d.minAmount) || 1),
-                    max: Number(d.maxAmount) || 50000
-                };
-                apLegacy = { enabled: apCfg.enabled, apiKey: apCfg.apiKey, min: apCfg.min, max: apCfg.max }; apMergeGateways();
-                document.getElementById('auto-pay-box').style.display = apCfg.enabled ? 'block' : 'none';
-                document.getElementById('manual-pay-box').style.display = apCfg.enabled ? 'none' : 'block';
-                document.getElementById('ap-min-txt').innerText = apMoney(apCfg.min);
-                document.getElementById('ap-max-txt').innerText = apMoney(apCfg.max);
-                const inp = document.getElementById('ap-amount');
-                inp.min = apCfg.min; inp.max = apCfg.max;
-                if (apCfg.enabled) apResume();
-            });
+            // Purana "Auto Payment" hata diya: ab sirf Admin > Payment Gateways se gateway chalte hain.
+            apPaintCfg(); if (apCfg.enabled) apResume();
         }
 
         // FamGateway API - create order + verify.
@@ -1461,9 +1474,18 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
             url = gwHttps(url);
             try {
                 const r = await fetch('/api/gw?u=' + encodeURIComponent(url), { method: 'GET', cache: 'no-store' });
-                if (r.ok && /json/i.test(r.headers.get('content-type') || '')) return r;
+                if (r.headers.get('x-gw') === 'ok') return r;
             } catch (e) {}
             return fetch(url, { method: 'GET', cache: 'no-store' });
+        }
+        // Supplier panel calls: pehle same-site proxy (CORS/mixed-content se bachata hai), phir direct.
+        async function supFetch(url, init) {
+            url = gwHttps(url);
+            try {
+                const r = await fetch('/api/gw?u=' + encodeURIComponent(url), init);
+                if (r.headers.get('x-gw') === 'ok') return r;
+            } catch (e) {}
+            return fetch(url, init);
         }
         const gwPaid = (j) => { if (!j || typeof j !== 'object') return false; const ok = (x) => ['success', 'paid', 'completed', 'confirmed'].includes(String(x || '').toLowerCase()); const d = (j.data && typeof j.data === 'object') ? j.data : {}; return ok(j.status) || ok(d.status) || j.is_paid === true || d.is_paid === true || j.paid === true || d.paid === true; };
         async function apCall(fields) {
@@ -2049,9 +2071,6 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
             const n = Number(siteLinks.safetyBalance) || 10;
             document.getElementById('sf-text').innerText = l === 'hi' ? `अकाउंट सुरक्षा के लिए ${n}+ बैलेंस रखें।` : `Keep ${n}+ balance for account safety.`;
         };
-        const THEMES = [0, 60, 130, 200, 280];
-        window.cycleTheme = () => { const i = (Number(localStorage.getItem('panel_theme') || 0) + 1) % THEMES.length; localStorage.setItem('panel_theme', i); document.documentElement.style.filter = THEMES[i] ? `hue-rotate(${THEMES[i]}deg)` : ''; };
-        { const i = Number(localStorage.getItem('panel_theme') || 0); if (THEMES[i]) document.documentElement.style.filter = `hue-rotate(${THEMES[i]}deg)`; }
 
         function renderRefCard() {
             if (!currentUserId) return;
@@ -2268,7 +2287,7 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
                 debited = true;
                 let j = null;
                 try {
-                    const res = await fetch(SUPPLIER_URL, { method: 'POST',
+                    const res = await supFetch(SUPPLIER_URL, { method: 'POST',
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'x-master-key': supCfg.masterKey },
                         body: new URLSearchParams({ api_key: supCfg.apiKey, action: 'buy', product_id: pid, duration: plan.days, quantity: String(qty) }) });
                     j = await res.json().catch(() => null);
@@ -2604,7 +2623,7 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
         let pxKeyShown = false;
         function renderApi() {
             const box = document.getElementById('px-api'); if (!box) return;
-            const isR = userData.role === 'Reseller'; const base = (pxApiCfg.baseUrl || '').replace(/\/$/, '');
+            const isR = userData.role === 'Reseller'; const base = (pxApiCfg.baseUrl || location.origin).replace(/\/$/, '');
             const connected = !!(pxApiCfg.enabled && base);
             if (!isR) { box.innerHTML = `<div class="px-head"><h2 class="px-title"><i class="fas fa-code"></i> API / Reseller Access</h2></div><div class="px-card" style="text-align:center;padding:30px"><i class="fas fa-lock" style="font-size:30px;color:#00e5ff"></i><h3 style="margin:10px 0">API sirf Reseller ke liye hai</h3><div class="px-muted" style="margin-bottom:14px">Reseller ban kar apni API key lo.</div><button class="px-btn" onclick="switchTab('Premium')"><i class="fas fa-crown"></i> Premium Plans</button></div>`; return; }
             const key = userData.apiKey || ''; const on = !!key && pxMyApi && pxMyApi.status !== 'revoked';
@@ -2667,11 +2686,11 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
         };
 
         /* ---------- multi-gateway (ZapUPI / FAM Gateway / any) with priority fallback ---------- */
-        let apLegacy = null;
+        let apLegacy = null, apPick = '', dpMeth = {};
         function apCandidates() {
             const list = Object.entries(pxGws).map(([id, g]) => ({ id, ...g })).filter(g => g.enabled && g.apiKey && /^https?:\/\//i.test(g.baseUrl || '')).sort((a, b) => (Number(a.priority) || 100) - (Number(b.priority) || 100))
                 .map(g => ({ id: g.id, name: g.name, base: gwHttps(String(g.baseUrl).replace(/\/$/, '')), key: g.apiKey, cp: g.createPath || '/api/qr.php', vp: g.verifyPath || '/api/verify-order.php', min: Math.max(0.01, Number(g.minAmount) || 1), max: Number(g.maxAmount) || 50000 }));
-            if (apLegacy && apLegacy.enabled) list.push({ id: 'legacy', name: 'Default', base: FG_BASE, key: apLegacy.apiKey, cp: '/api/qr.php', vp: '/api/verify-order.php', min: apLegacy.min, max: apLegacy.max });
+            if (apPick) { const i = list.findIndex(x => x.id === apPick); if (i > 0) list.unshift(list.splice(i, 1)[0]); }
             return list;
         }
         function apMergeGateways() {
@@ -2679,15 +2698,25 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
             apCfg.enabled = c.length > 0;
             if (c.length) { apCfg.min = Math.min(...c.map(x => x.min)); apCfg.max = Math.max(...c.map(x => x.max)); }
         }
+        window.apPickGw = (id) => { apPick = id; apPaintCfg(); };
+        function dpPaintTabs() {
+            const show = { upi: true, binance: dpMeth.binance !== false, bkash: dpMeth.bkash !== false };
+            let cur = null;
+            ['upi', 'binance', 'bkash'].forEach(x => { const b = document.getElementById('dpb-' + x), c = document.getElementById('dp-' + x); if (!b || !c) return; b.style.display = show[x] ? '' : 'none'; if (show[x] && b.classList.contains('on')) cur = x; if (!show[x]) c.style.display = 'none'; });
+            if (!cur) dpTab('upi');
+        }
         function apPaintCfg() {
             const a = document.getElementById('auto-pay-box'), m = document.getElementById('manual-pay-box'); if (!a || !m) return;
+            const cl = apCandidates(), ml = document.getElementById('ap-method-list');
+            if (ml) { const cur = (cl.find(g => g.id === apPick) || cl[0] || {}).id; ml.innerHTML = cl.map(g => `<div class="ap-method${g.id === cur ? ' sel' : ''}" onclick="apPickGw('${apEsc(g.id)}')"><div class="tick"><i class="fas fa-check"></i></div><b>${apEsc(g.name || 'UPI')}</b><span>${cl.length > 1 ? (g.id === cur ? 'SELECTED' : 'TAP') : 'INR'}</span></div>`).join(''); }
+            dpPaintTabs();
             a.style.display = apCfg.enabled ? 'block' : 'none'; m.style.display = apCfg.enabled ? 'none' : 'block';
             const mn = document.getElementById('ap-min-txt'), mx = document.getElementById('ap-max-txt'); if (mn) mn.innerText = apMoney(apCfg.min); if (mx) mx.innerText = apMoney(apCfg.max);
             const inp = document.getElementById('ap-amount'); if (inp) { inp.min = apCfg.min; inp.max = apCfg.max; }
         }
         const apGwFor = async (orderId) => {
             let gid = ''; try { gid = (await get(ref(db, `auto_payments/${orderId}/gatewayId`))).val() || ''; } catch (e) {}
-            return apCandidates().find(g => g.id === gid) || apCandidates().find(g => g.id === 'legacy') || null;
+            return apCandidates().find(g => g.id === gid) || apCandidates()[0] || null;
         };
 
         /* ---------- supplier mapping purchase (priority + automatic fallback) ---------- */
@@ -2707,7 +2736,7 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
                     const s = pxSups[m.supplierId];
                     try {
                         const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }; if (s.masterKey) headers['x-master-key'] = s.masterKey;
-                        const res = await fetch(s.apiUrl, { method: 'POST', headers, body: new URLSearchParams({ api_key: s.apiKey, action: 'buy', product_id: String(m.supplierPid), duration: String(m.supplierDuration || plan.days), quantity: String(qty) }) });
+                        const res = await supFetch(s.apiUrl, { method: 'POST', headers, body: new URLSearchParams({ api_key: s.apiKey, action: 'buy', product_id: String(m.supplierPid), duration: String(m.supplierDuration || plan.days), quantity: String(qty) }) });
                         const j = await res.json().catch(() => null);
                         const k = j && Array.isArray(j.keys) ? j.keys.filter(Boolean) : (j && j.key ? [j.key] : []);
                         if (k.length) { keys = k; used = m; break; }
@@ -2736,7 +2765,7 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
 
         /* ---------- wire everything up ---------- */
         const _pxSwitch = window.switchTab;
-        window.switchTab = (t) => { _pxSwitch(t); if (t === 'Catalog') renderCatalog(); if (t === 'Premium') renderPremium(); if (t === 'ApiAccess') renderApi(); if (t === 'TelegramInfo') renderTg(); if (t === 'TgBot') { tgbAttach(); renderTgBot(); } };
+        window.switchTab = (t) => { _pxSwitch(t); if (t === 'Catalog') renderCatalog(); if (t === 'Premium') renderPremium(); if (t === 'ApiAccess') renderApi(); if (t === 'TelegramInfo') renderTg(); };
         const pxRerender = () => { renderCatalog(); renderPremium(); renderApi(); renderTg(); };
         let pxAttached = '';
         const pxOnValue = onValue;
@@ -2747,7 +2776,8 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
             onValue(ref(db, 'payment_settings'), s => { pxPay = s.val() || {}; });
             onValue(ref(db, 'branding'), s => { pxBrand = s.val() || {}; applyBranding(); });
             onValue(ref(db, 'announcements'), s => { pxAnns = s.val() || {}; renderAnnouncements(); });
-            onValue(ref(db, 'payment_gateways'), s => { pxGws = s.val() || {}; apMergeGateways(); apPaintCfg(); });
+            onValue(ref(db, 'payment_gateways'), s => { pxGws = s.val() || {}; apMergeGateways(); apPaintCfg(); if (apCfg.enabled && !window.__apRes) { window.__apRes = 1; apResume(); } });
+            onValue(ref(db, 'site_settings/deposit_methods'), s => { dpMeth = s.val() || {}; dpPaintTabs(); });
             onValue(ref(db, 'suppliers'), s => { pxSups = s.val() || {}; renderCatalog(); });
             onValue(ref(db, 'pid_mappings'), s => { pxMaps = s.val() || {}; renderCatalog(); });
             onValue(ref(db, 'api_settings'), s => { pxApiCfg = s.val() || {}; renderApi(); });
@@ -2787,117 +2817,6 @@ input:focus,textarea:focus,select:focus{outline:none;box-shadow:0 0 0 2px rgba(2
                 const c = e && e.code || '';
                 showToast(c === 'auth/popup-closed-by-user' || c === 'auth/cancelled-popup-request' ? 'Google login cancel hua' : c === 'auth/unauthorized-domain' ? 'Is domain ko Firebase > Authentication > Settings > Authorized domains me add karo' : c === 'auth/operation-not-allowed' ? 'Firebase me Google sign-in enable karo (Authentication > Sign-in method)' : 'Google login nahi hua: ' + (e.message || c), 'error');
             } finally { loader.classList.add('hidden'); btns.forEach(b => b.disabled = false); }
-        };
-
-        /* =====================================================
-           TELEGRAM BOT HOSTING (paid) - user apna shop bot website se chalata hai
-           Data: tg_bots/{uid}  |  price: site_settings/tgbot_hosting  |  runner: bot_manager.py
-           ===================================================== */
-        let tgbCfg = {}, tgbMine = null, tgbUid = null, tgbBusy = false, tgbDraft = {};
-        const TGB_DAY = 86400000;
-        const TGB_ST = { queued: ['Queued', '#ffb800'], starting: ['Starting...', '#ffb800'], running: ['Running', '#2bff8a'], stopped: ['Stopped', '#9aa0b5'], expired: ['Expired', '#ff5470'], error: ['Error', '#ff5470'], invalid_token: ['Invalid token', '#ff5470'], blocked: ['Blocked by admin', '#ff5470'], duplicate_token: ['Token already used', '#ff5470'] };
-        window.tgbIn = (el) => { tgbDraft[el.dataset.k] = el.value; };
-        function tgbAttach() {
-            if (!currentUserId || tgbUid === currentUserId) return; tgbUid = currentUserId;
-            onValue(ref(db, 'site_settings/tgbot_hosting'), s => { tgbCfg = s.val() || {}; renderTgBot(); }, () => {});
-            onValue(ref(db, `tg_bots/${currentUserId}`), s => { tgbMine = s.val() || null; renderTgBot(); }, () => {});
-        }
-        const tgbFmtDate = (t) => t ? new Date(t).toLocaleString('en-IN', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '-';
-        function renderTgBot() {
-            const box = document.getElementById('px-tgbot'); if (!box) return;
-            if (box.contains(document.activeElement) && document.activeElement.tagName === 'INPUT') return; // typing ke time re-render nahi
-            const m = tgbMine || {}, now = Date.now(), active = Number(m.paidUntil) > now;
-            const price = Number(tgbCfg.price), days = Number(tgbCfg.days) || 30;
-            const priced = tgbCfg.price != null && tgbCfg.price !== '' && !isNaN(price);
-            const saleOn = tgbCfg.enabled !== false && priced;
-            const stKey = !active && m.paidUntil ? 'expired' : (m.blocked ? 'blocked' : (m.desired === 'off' && active ? 'stopped' : (m.status || 'queued')));
-            const st = TGB_ST[stKey] || [stKey, '#9aa0b5'];
-            const d = (k) => pxE(tgbDraft[k] != null ? tgbDraft[k] : (m[k] || ''));
-            const uname = String(m.botUsername || '').replace(/^@/, '');
-            const left = active ? Math.ceil((m.paidUntil - now) / TGB_DAY) : 0;
-            const statusCard = tgbMine ? `<div class="px-card"><div class="px-row" style="flex-wrap:wrap;gap:10px;align-items:center"><span class="tgb-st" style="color:${st[1]}">${st[0]}</span>
-                <span class="px-muted">${active ? `Valid till <b>${tgbFmtDate(m.paidUntil)}</b> (${left} din baki)` : 'Plan expire ho gaya - renew karo'}</span>
-                ${uname ? `<a class="px-btn" style="margin-left:auto" target="_blank" rel="noopener" href="https://t.me/${pxE(uname)}"><i class="fab fa-telegram"></i> @${pxE(uname)}</a>` : ''}</div>
-                ${m.statusMsg ? `<div class="px-muted" style="margin-top:8px">${pxE(m.statusMsg)}</div>` : ''}
-                <div class="px-muted" style="margin-top:8px">Bot ke andar <b>/admin</b> likho (sirf aapke Admin ID se) - wahan se products, keys, users, payments, broadcast sab control hota hai.</div></div>` : '';
-            const priceTxt = !priced ? 'Admin ne abhi price set nahi kiya.' : (price > 0 ? `<b>₹${price.toFixed(2)}</b> / ${days} din` : `<b>FREE</b> / ${days} din`);
-            const canBuy = saleOn && !m.blocked;
-            box.innerHTML = `<div class="px-head"><h2 class="px-title"><i class="fas fa-robot"></i> My Telegram Bot</h2></div>
-            <div class="px-card"><div class="px-row" style="flex-wrap:wrap;gap:10px"><div class="px-sp"><b>Apna Telegram Shop Bot</b><div class="px-muted">Token, Admin ID, contact, bot username aur shop name daalo - bot website se apne aap chalu ho jayega. Plan: ${priceTxt}. Wallet: <b>₹${(parseFloat(userData.balance) || 0).toFixed(2)}</b></div></div></div>
-            ${!saleOn && !active ? '<div class="px-muted" style="margin-top:8px;color:#ffb800">Ye service abhi band hai / admin ne price set nahi kiya.</div>' : ''}</div>
-            ${statusCard}
-            <div class="px-card"><div class="tgb-g">
-                <div class="full"><label>Bot Token (@BotFather se)</label><input class="px-in" data-k="token" oninput="tgbIn(this)" placeholder="123456789:AA..." autocomplete="off" value="${d('token')}"></div>
-                <div><label>Admin Telegram ID (number)</label><input class="px-in" data-k="adminId" oninput="tgbIn(this)" inputmode="numeric" placeholder="123456789" value="${d('adminId')}"></div>
-                <div><label>Admin Contact (@username)</label><input class="px-in" data-k="adminContact" oninput="tgbIn(this)" placeholder="@yourname" value="${d('adminContact')}"></div>
-                <div><label>Bot Username</label><input class="px-in" data-k="botUsername" oninput="tgbIn(this)" placeholder="MyShop_bot" value="${d('botUsername')}"></div>
-                <div><label>Shop Name</label><input class="px-in" data-k="shopName" oninput="tgbIn(this)" maxlength="40" placeholder="My Panel Store" value="${d('shopName')}"></div>
-            </div>
-            <div class="px-row" style="flex-wrap:wrap;gap:8px;margin-top:14px">
-                ${active ? `<button class="px-btn" onclick="tgbSave()"><i class="fas fa-save"></i> Save changes</button>
-                <button class="px-btn" ${canBuy ? '' : 'disabled'} onclick="tgbPay('renew')"><i class="fas fa-rotate"></i> Renew +${days} din${priced && price > 0 ? ` (₹${price.toFixed(2)})` : ''}</button>
-                <button class="px-btn" onclick="tgbToggle()"><i class="fas ${m.desired === 'off' ? 'fa-play' : 'fa-stop'}"></i> ${m.desired === 'off' ? 'Start bot' : 'Stop bot'}</button>`
-                : `<button class="px-btn" ${canBuy ? '' : 'disabled'} onclick="tgbPay('buy')"><i class="fas fa-bolt"></i> ${tgbMine ? 'Renew' : 'Activate'} Bot${priced && price > 0 ? ` - ₹${price.toFixed(2)}` : ''}</button>`}
-            </div>
-            <div class="px-muted" style="margin-top:10px">Token kisi ke saath share mat karo. Ek token ek hi jagah chal sakta hai.</div></div>`;
-        }
-        async function tgbRead() {
-            const g = (k) => String((tgbDraft[k] != null ? tgbDraft[k] : (tgbMine && tgbMine[k])) || '').trim();
-            const token = g('token'), adminId = g('adminId').replace(/\s/g, ''), shopName = g('shopName').replace(/[<>{}]/g, '').slice(0, 40);
-            let adminContact = g('adminContact').replace(/^https?:\/\/t\.me\//i, '').replace(/^@/, ''), botUsername = g('botUsername').replace(/^@/, '').replace(/^https?:\/\/t\.me\//i, '');
-            if (!/^\d{6,12}:[A-Za-z0-9_-]{30,}$/.test(token)) return { err: 'Bot token sahi nahi hai (BotFather wala poora token daalo)' };
-            if (!/^\d{5,15}$/.test(adminId)) return { err: 'Admin ID sirf number hona chahiye (@userinfobot se milega)' };
-            if (!/^[A-Za-z0-9_]{4,32}$/.test(adminContact)) return { err: 'Admin contact username sahi daalo (e.g. @yourname)' };
-            if (shopName.length < 2) return { err: 'Shop name daalo (kam se kam 2 akshar)' };
-            try {
-                const c = new AbortController(); const t = setTimeout(() => c.abort(), 8000);
-                const r = await fetch(`https://api.telegram.org/bot${token}/getMe`, { signal: c.signal }); clearTimeout(t);
-                const j = await r.json();
-                if (!j.ok) return { err: 'Bot token invalid hai - BotFather se naya token lo' };
-                botUsername = j.result.username || botUsername;
-            } catch (e) { /* network issue: runner dobara check karega */ }
-            if (!/^[A-Za-z0-9_]{5,32}$/.test(botUsername)) return { err: 'Bot username sahi daalo (e.g. MyShop_bot)' };
-            return { rec: { token, adminId, adminContact: '@' + adminContact, botUsername, shopName } };
-        }
-        window.tgbSave = async () => {
-            if (tgbBusy || !tgbMine) return; const f = await tgbRead(); if (f.err) return showToast(f.err, 'error');
-            const same = Object.keys(f.rec).every(k => String(tgbMine[k] || '') === String(f.rec[k]));
-            try { await update(ref(db, `tg_bots/${currentUserId}`), Object.assign({}, f.rec, { updatedAt: Date.now() }, same ? {} : { rev: Date.now(), status: 'queued', statusMsg: 'Naye settings ke saath restart ho raha hai' })); tgbDraft = {}; showToast('Saved'); }
-            catch (e) { showToast('Save fail ho gaya', 'error'); }
-        };
-        window.tgbToggle = async () => {
-            if (!tgbMine || tgbMine.blocked) return; const off = tgbMine.desired !== 'off';
-            try { await update(ref(db, `tg_bots/${currentUserId}`), { desired: off ? 'off' : 'on', status: off ? 'stopped' : 'queued', statusMsg: off ? 'Aapne bot stop kiya' : 'Bot start ho raha hai', rev: Date.now() }); showToast(off ? 'Bot stop ho raha hai' : 'Bot start ho raha hai'); }
-            catch (e) { showToast('Fail', 'error'); }
-        };
-        window.tgbPay = async (mode) => {
-            if (tgbBusy) return;
-            if (tgbMine && tgbMine.blocked) return showToast('Aapka bot admin ne block kiya hai', 'error');
-            const price = Math.round(Number(tgbCfg.price) * 100) / 100, days = Number(tgbCfg.days) || 30;
-            if (tgbCfg.enabled === false || isNaN(price) || price < 0) return showToast('Ye service abhi available nahi hai', 'error');
-            const f = await tgbRead(); if (f.err) return showToast(f.err, 'error');
-            if (price > 0 && !confirm(`Wallet se ₹${price.toFixed(2)} katenge - ${days} din ke liye. Confirm?`)) return;
-            tgbBusy = true; loader.classList.remove('hidden');
-            let debited = false;
-            const refund = () => runTransaction(ref(db, `users/${currentUserId}/balance`), (c) => Math.round(((Number(c) || 0) + price) * 100) / 100);
-            try {
-                if (price > 0) {
-                    const r = await runTransaction(ref(db, `users/${currentUserId}/balance`), (c) => { const cur = Number(c) || 0; if (cur < price) return; return Math.round((cur - price) * 100) / 100; });
-                    if (!r.committed) { showToast(`Balance kam hai. ₹${price.toFixed(2)} chahiye - pehle Deposit karo.`, 'error'); return; }
-                    debited = true;
-                }
-                const base = Math.max(Date.now(), Number(tgbMine && tgbMine.paidUntil) || 0);
-                const rec = Object.assign({}, f.rec, { uid: currentUserId, username: userData.username || '', paidUntil: base + days * TGB_DAY, desired: 'on', status: 'queued', statusMsg: 'Runner bot start karega (10-30 second)', updatedAt: Date.now(), rev: Date.now() });
-                if (!tgbMine) rec.createdAt = Date.now();
-                await update(ref(db, `tg_bots/${currentUserId}`), rec);
-                debited = false;
-                try { await push(ref(db, 'tg_bot_orders'), { uid: currentUserId, username: userData.username || '', botUsername: f.rec.botUsername, shopName: f.rec.shopName, type: tgbMine ? 'renew' : 'buy', price, days, paidUntil: rec.paidUntil, ts: Date.now() }); } catch (e) {}
-                if (price > 0) { try { await push(ref(db, `users/${currentUserId}/transactions`), { type: 'Telegram Bot', amount: price, description: `Telegram bot ${mode === 'renew' ? 'renew' : 'plan'} (${days} din) @${f.rec.botUsername}`, date: new Date().toLocaleString(), ts: Date.now() }); } catch (e) {} }
-                tgbDraft = {}; showToast('Bot activate ho gaya! 10-30 second me chalu ho jayega.');
-            } catch (e) {
-                if (debited) { try { await refund(); } catch (x) {} }
-                showToast('Fail ho gaya, paise wapas (agar kate the)', 'error');
-            } finally { tgbBusy = false; loader.classList.add('hidden'); }
         };
 
         // watchdog: loader kabhi atka na rahe

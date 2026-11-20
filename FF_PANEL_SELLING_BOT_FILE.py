@@ -27,23 +27,14 @@ from aiogram.types import (
 # ==============================================================================
 # 1. BOT CONFIGURATION & CONSTANTS
 # ==============================================================================
-# --- Multi-tenant mode -------------------------------------------------------
-# bot_manager.py har paid user ke liye is file ko alag process me chalata hai aur
-# BOT_TOKEN / BOT_USERNAME / ADMIN_ID / ADMIN_CONTACT / SHOP_NAME / DB_PATH env me deta hai.
-# Env na ho to neeche ki original (aapki apni) values use hoti hain - kuch change nahi.
-_TENANT = bool(os.environ.get("BOT_TOKEN"))
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Aryan_Modz_Ofc.db')
 
-DB_PATH = os.environ.get("DB_PATH") or os.path.join(os.path.dirname(os.path.abspath(__file__)), 'Aryan_Modz_Ofc.db')
+BOT_TOKEN = "8177980915:AAFLe4A_l0mNg77P3ic5OuS3Pxm0"
+BOT_USERNAME = "PANEL_SEALING_10_BOT"
+ADMIN_ID = 8781077406
+ADMIN_CONTACT = "@XLARYAN_0100"
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN") or "8177980915:AAFLe4A_l0mNg77P3ic5OuS3Pxm0"
-BOT_USERNAME = (os.environ.get("BOT_USERNAME") or "PANEL_SEALING_10_BOT").lstrip("@")
-ADMIN_ID = int(os.environ.get("ADMIN_ID") or 8781077406)
-ADMIN_CONTACT = os.environ.get("ADMIN_CONTACT") or "@XLARYAN_0100"
-SHOP_NAME = (os.environ.get("SHOP_NAME") or "ARYAN OFFICIAL PANEL STORE").replace("{", "(").replace("}", ")")
-SUPPORT_DEFAULT = ("https://t.me/" + ADMIN_CONTACT.lstrip("@")) if _TENANT else "https://t.me/YourSupport"
-
-# Tenant bot me owner ki apni FamGateway key kabhi nahi jaani chahiye - user apni key bot ke /admin se set karega.
-FAMPAY_API_KEY = "YOUR_FAMPAY_API_KEY" if _TENANT else "fam_fc6b8ab9fea985ff4ff97b91c5739c8dae151e8d"  # Replace with your actual API key
+FAMPAY_API_KEY = "fam_fc6b8ab9fea985ff4ff97b91c5739c8dae151e8d"  # Replace with your actual API key
 FAMPAY_QR_URL = "https://famgateway.in/api/qr.php"
 FAMPAY_VERIFY_URL = "https://famgateway.in/api/verify-order.php"
 FAMPAY_STATUS_URL = "https://famgateway.in/api/checkout-status.php"
@@ -120,7 +111,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(os.path.splitext(DB_PATH)[0] + ".log"),
+        logging.FileHandler("bot_activity.log"),
         logging.StreamHandler()
     ]
 )
@@ -203,7 +194,7 @@ def get_emoji_icon(slot: str, default_id: str = None) -> str:
 # ==============================================================================
 UI_TEXTS = {
     "start_menu": (
-        "{sagar} WELCOME TO " + SHOP_NAME.upper() + " 🛍️\n"
+        "{sagar} WELCOME TO ARYAN OFFICIAL PANEL STORE 🛍️\n"
         "{product_store} 🔑 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐆𝐚𝐦𝐞 𝐊𝐞𝐲𝐬 & 𝐏𝐚𝐧𝐞𝐥𝐬\n"
         "{profile}  𝐈𝐧𝐬𝐭𝐚𝐧𝐭 𝐀𝐮𝐭𝐨 𝐃𝐞𝐥𝐢𝐯𝐞𝐫𝐲 𝟐𝟒×𝟕\n"
         "{add_balance} 🔒 𝟏𝟎𝟎% 𝐒𝐞𝐜𝐮𝐫𝐞 & 𝐓𝐫𝐮𝐬𝐭𝐞𝐝 𝐒𝐭𝐨𝐫𝐞\n"
@@ -499,7 +490,7 @@ def init_db() -> None:
         ('reseller_min_balance', '500.0'),
         ('migration_done', '0'),
         ('new_user_start_message', 'ON'),
-        ('support_telegram', SUPPORT_DEFAULT),
+        ('support_telegram', 'https://t.me/YourSupport'),
         ('support_whatsapp', 'https://wa.me/YourNumber'),
         ('ui_start_menu', UI_TEXTS['start_menu']),
         ('ui_download_files', UI_TEXTS['download_files']),
@@ -1576,7 +1567,7 @@ async def handle_contact(message: Message):
     try:
         await message.answer(
             "✅ <b>Contact verification successful!</b>\n\n"
-            f"Welcome to {SHOP_NAME} Your account is now verified.",
+            "Welcome to ARYAN OFFICIAL PANEL STORE Your account is now verified.",
             reply_markup=ReplyKeyboardRemove(),
             parse_mode='HTML'
         )
@@ -2695,7 +2686,7 @@ async def tutorial_system(call: CallbackQuery):
 
 @dp.callback_query(F.data == "menu_support")
 async def support_center(call: CallbackQuery):
-    telegram_link = get_setting("support_telegram", SUPPORT_DEFAULT)
+    telegram_link = get_setting("support_telegram", "https://t.me/YourSupport")
     whatsapp_link = get_setting("support_whatsapp", "https://wa.me/YourNumber")
     kb = InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text="Contact on Telegram", url=telegram_link, icon_custom_emoji_id=get_emoji_icon("telegram"), style="primary")],
