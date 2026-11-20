@@ -790,8 +790,23 @@ html[data-theme] .sidebar-item.active-menu{background:linear-gradient(90deg,colo
 (function () {
   var hide = function () { var l = document.getElementById('loader'); if (l) l.classList.add('hidden'); };
   setTimeout(hide, 8000);
-  window.addEventListener('error', function () { setTimeout(hide, 2500); });
-  window.addEventListener('unhandledrejection', function () { setTimeout(hide, 2500); });
+  function report(message) {
+    setTimeout(hide, 2500);
+    var text = String(message || 'Unknown JavaScript error').slice(0, 220);
+    var show = function () {
+      var host = document.getElementById('toast-container');
+      if (!host) return;
+      var item = document.createElement('div');
+      item.className = 'toast error';
+      item.textContent = 'Panel error: ' + text;
+      host.appendChild(item);
+      setTimeout(function () { item.remove(); }, 6000);
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', show, { once: true });
+    else show();
+  }
+  window.addEventListener('error', function (event) { report(event && (event.message || (event.error && event.error.message))); });
+  window.addEventListener('unhandledrejection', function (event) { report(event && event.reason && (event.reason.message || event.reason)); });
 })();
 </script>
 <div id="loader">
@@ -1328,16 +1343,24 @@ html[data-theme] .sidebar-item.active-menu{background:linear-gradient(90deg,colo
         };
 
         window.switchTab = (tabName) => {
+            const safeName = String(tabName || '').trim();
+            const targetView = document.getElementById(`view-${safeName}`);
+            if (!targetView) {
+                window.showToast(`Panel section '${safeName || 'unknown'}' nahi mila. Page reload karke try karo.`, 'error');
+                return false;
+            }
             document.querySelectorAll('.tab-view-section').forEach(view => view.classList.add('hidden'));
             document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active-menu'));
-            
-            const targetView = document.getElementById(`view-${tabName}`);
-            if(targetView) targetView.classList.remove('hidden');
-
-            const targetMenu = document.getElementById(`menu-${tabName}`);
-            if(targetMenu) targetMenu.classList.add('active-menu');
-
-            if(sidebar.classList.contains('active')) toggleSidebar();
+            targetView.classList.remove('hidden');
+            const targetMenu = document.getElementById(`menu-${safeName}`);
+            if (targetMenu) targetMenu.classList.add('active-menu');
+            const side = document.getElementById('sidebar');
+            const sideOverlay = document.getElementById('sidebar-overlay');
+            if (side && side.classList.contains('active')) {
+                side.classList.remove('active');
+                if (sideOverlay) sideOverlay.classList.remove('active');
+            }
+            return true;
         };
 
         const menuToggle = document.getElementById('menu-toggle');
